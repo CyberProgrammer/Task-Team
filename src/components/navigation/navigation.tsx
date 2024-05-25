@@ -1,33 +1,15 @@
-import React from "react";
-import CompanyLogo from "../../../assets/logos/company_logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react"
+import CompanyLogo from "../../../assets/logos/LogoWide.svg"
+import { Link, useLocation} from "react-router-dom"
+import LoginButton from "../buttons/LoginButton.tsx"
+import {useAuth0} from "@auth0/auth0-react"
+import LogoutButton from "../buttons/LogoutButton.tsx";
 
-interface NavigationProps {
-    isLoggedIn: boolean;
-    onLogin: () => void;
-    onLogout: () => void;
-}
 
-const Navigation : React.FC<NavigationProps> = (
-    {
-        onLogin,
-        onLogout,
-        isLoggedIn
-    }) => {
-
-    const navigate = useNavigate();
-
-    const handleLoginClick = () => {
-        // Call the onLogin function passed from the parent component
-        onLogin();
-        navigate("/home");
-    };
-
-    const handleLogoutClick = () => {
-        // Call the onLogout function passed from the parent component
-        onLogout();
-        navigate("/");
-    };
+const Navigation : React.FC = () => {
+    const {isAuthenticated} = useAuth0()
+    const location = useLocation()
+    const isIndex = location.pathname === "/"
 
     return(
         <div>
@@ -36,18 +18,18 @@ const Navigation : React.FC<NavigationProps> = (
                     <img id={"company-logo"} src={CompanyLogo} alt="logo"/>
                 </div>
                 <div className={"link-container"}>
-                    <ul>
-                        {isLoggedIn ?
-                            (<li><Link to="/home">Home</Link></li>) : (null)
-                        }
-                    </ul>
+                    { !isIndex ?
+                        (
+                            <ul>
+                                <li><Link to="/home">Home</Link></li>
+                            </ul>
+                        ) : null
+                    }
                 </div>
                 <div className={"button-container"}>
-                    {!isLoggedIn ? (
-                        <button className={"primaryButton"} onClick={handleLoginClick}>Login</button>
-                    ) : (
-                        <button className={"primaryButton"} onClick={handleLogoutClick}>Logout</button>
-                    )}
+                    {isAuthenticated ?
+                        <LogoutButton /> : <LoginButton />
+                    }
                 </div>
             </nav>
         </div>

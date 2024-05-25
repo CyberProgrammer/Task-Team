@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react"
-
 import { useInView } from "react-intersection-observer";
 
 import AnimatedCover from "../../../assets/animations/VacationAnimated_AME/vacation_edit.mp4"
