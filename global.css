@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "SourceSansRegular", serif;
+    font-family: 'PhysisMedium', sans-serif;
 }
 
 html, body{
@@ -24,7 +24,7 @@ h1, h2, h3, h3, h4, h5, h6{
 
 #index .content{
     display: flex;
-    height: calc(100vh - 80px);
+    height: 100vh;
     background-color: #e5e5e5;
     overflow-y: scroll;
     overflow-x: hidden;
