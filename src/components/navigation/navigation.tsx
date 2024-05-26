@@ -1,10 +1,12 @@
 import React from "react"
-import CompanyLogo from "../../../assets/logos/LogoWide.svg"
-import { Link, useLocation} from "react-router-dom"
-import LoginButton from "../buttons/LoginButton.tsx"
 import {useAuth0} from "@auth0/auth0-react"
-import LogoutButton from "../buttons/LogoutButton.tsx";
+import { Link, useLocation} from "react-router-dom"
 
+import './navigation.css'
+
+import CompanyLogo from "../../../assets/logos/LogoWide.svg"
+import LoginButton from "../buttons/LoginButton.tsx"
+import LogoutButton from "../buttons/LogoutButton.tsx";
 
 const Navigation : React.FC = () => {
     const {isAuthenticated} = useAuth0()

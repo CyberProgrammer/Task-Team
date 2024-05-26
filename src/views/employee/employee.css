@@ -1,0 +1,10 @@
+#employee-home{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.employee-content{
+    width: calc(100% - 210px);
+    background-color: yellow;
+}

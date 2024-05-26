@@ -1,0 +1,10 @@
+#side-navigation{
+    width: 210px;
+    text-align: center;
+    padding: 5% 0 5% 0;
+    background-color: red;
+}
+
+.side-navigation-links .primaryControlButton{
+    margin: 5% 0 5% 0;
+}

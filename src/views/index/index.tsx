@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react"
 import { useInView } from "react-intersection-observer";
 
+import './index.css'
+
 import AnimatedCover from "../../../assets/animations/VacationAnimated_AME/vacation_edit.mp4"
 import ChooseUs from "../../../assets/images/index/choose_us.svg"
 import LightBulb from "../../../assets/images/index/lightbulb.svg"
-
-import './index.css'
 
 interface IndexProps {
 

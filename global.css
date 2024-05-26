@@ -30,43 +30,15 @@ h1, h2, h3, h3, h4, h5, h6{
     overflow-x: hidden;
 }
 
-/* Navigation Global Style */
-#navigation{
-    display: flex;
-    align-items: center;
-    height: 80px;
-    width: 100%;
-    background-color: black;
-    color: white;
-}
-
-#navigation .logo-container{
-    width: 25%;
-    margin-left: 10%;
-}
-
-#navigation .link-container{
-    width: 50%;
-}
-
-#navigation .button-container{
-    display: flex;
-    justify-content: end;
-    width: 25%;
-    margin-right: 5%;
-}
-
-#company-logo{
-    width: 125px;
-    height: auto;
-}
-
-li{
-    list-style: none;
-}
-
 /* Button Global Styles */
 .primaryButton{
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 25px;
+}
+
+.primaryControlButton{
+    width: 60%;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 5px;
 }
