@@ -1,0 +1,11 @@
+#employee-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#employee-content{
+    width: calc(100% - 250px);
+    padding: 1% 2.5% 1% 2.5%;
+    background-color: #16141c;
+}
