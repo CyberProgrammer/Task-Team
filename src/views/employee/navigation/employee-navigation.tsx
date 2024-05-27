@@ -5,7 +5,7 @@ import {Constants} from "../utils/constants.ts"
 
 import Header from "./header/header.tsx"
 import Footer from "./footer/footer.tsx"
-import ControlButton from "../../../components/buttons/ControlButton.tsx"
+import NavigationButton from "../../../components/buttons/NavigationButton.tsx"
 
 /* Icons */
 import DashboardIcon from "../../../../assets/icons/dashboard.svg"
@@ -30,14 +30,14 @@ const EmployeeNavigation : React.FC<EmployeeNavigationProps> = (
         <div id={"side-navigation"}>
             <Header />
             <div id={"side-navigation-links"}>
-                <ControlButton icon={DashboardIcon} isSelected={selectedSection == Constants.DASHBOARD} text={Constants.DASHBOARD} setSelectedSection={setSelectedSection}/>
-                <ControlButton icon={TaskIcon} isSelected={selectedSection == Constants.TASKS} text={Constants.TASKS} setSelectedSection={setSelectedSection}/>
-                <ControlButton icon={TeamIcon} isSelected={selectedSection == Constants.TEAMS} text={Constants.TEAMS} setSelectedSection={setSelectedSection}/>
-                <ControlButton icon={ProgressIcon} isSelected={selectedSection == Constants.PROGRESS} text={Constants.PROGRESS} setSelectedSection={setSelectedSection}/>
-                <ControlButton icon={HistoryIcon} isSelected={selectedSection == Constants.HISTORY} text={Constants.HISTORY} setSelectedSection={setSelectedSection}/>
-                <ControlButton icon={SettingIcon} isSelected={selectedSection == Constants.SETTINGS} text={Constants.SETTINGS} setSelectedSection={setSelectedSection}/>
+                <NavigationButton icon={DashboardIcon} isSelected={selectedSection == Constants.DASHBOARD} text={Constants.DASHBOARD} setSelectedSection={setSelectedSection}/>
+                <NavigationButton icon={TaskIcon} isSelected={selectedSection == Constants.TASKS} text={Constants.TASKS} setSelectedSection={setSelectedSection}/>
+                <NavigationButton icon={TeamIcon} isSelected={selectedSection == Constants.TEAMS} text={Constants.TEAMS} setSelectedSection={setSelectedSection}/>
+                <NavigationButton icon={ProgressIcon} isSelected={selectedSection == Constants.PROGRESS} text={Constants.PROGRESS} setSelectedSection={setSelectedSection}/>
+                <NavigationButton icon={HistoryIcon} isSelected={selectedSection == Constants.HISTORY} text={Constants.HISTORY} setSelectedSection={setSelectedSection}/>
+                <NavigationButton icon={SettingIcon} isSelected={selectedSection == Constants.SETTINGS} text={Constants.SETTINGS} setSelectedSection={setSelectedSection}/>
             </div>
-            <Footer setSelectedSection={setSelectedSection} />
+            <Footer />
         </div>
     )
 }

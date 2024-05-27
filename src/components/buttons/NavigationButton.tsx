@@ -7,7 +7,7 @@ interface ControlButtonProps {
     setSelectedSection: React.Dispatch<React.SetStateAction<string>>
 }
 
-const ControlButton : React.FC<ControlButtonProps> = ({icon, isSelected, text, setSelectedSection}) => {
+const NavigationButton : React.FC<ControlButtonProps> = ({icon, isSelected, text, setSelectedSection}) => {
     const handleClick = () => {
         setSelectedSection(text)
     }
@@ -15,7 +15,7 @@ const ControlButton : React.FC<ControlButtonProps> = ({icon, isSelected, text, s
     return(
         <button className={`primaryControlButton ${isSelected ? "selected" : ""}`} onClick={handleClick}>
             <div className={"icon-div"}>
-                <img src={icon} alt="Team Logo"/>
+                <img src={icon} alt="icon"/>
             </div>
             <div className={"text-div"}>
                 {text}
@@ -24,4 +24,4 @@ const ControlButton : React.FC<ControlButtonProps> = ({icon, isSelected, text, s
     )
 }
 
-export default ControlButton;
+export default NavigationButton;
