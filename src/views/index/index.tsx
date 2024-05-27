@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import { useInView } from "react-intersection-observer";
+import {useAuth0} from "@auth0/auth0-react";
 
 import './index.css'
 
@@ -7,19 +8,18 @@ import AnimatedCover from "../../../assets/animations/VacationAnimated_AME/vacat
 import ChooseUs from "../../../assets/images/index/choose_us.svg"
 import LightBulb from "../../../assets/images/index/lightbulb.svg"
 import Navigation from "../../components/navigation/navigation.tsx";
+import Video from "./video-row/video.tsx";
+import PrimaryCard from "./components/primary-card.tsx";
+
 
 interface IndexProps {
 
 }
-
-const Index : React.FC<IndexProps> = (
-    {
-
-    }) => {
-
+const Index : React.FC<IndexProps> = ({}) => {
     const [isRowVisible, setIsRowVisible] = useState<boolean>(false);
     const [isContainerVisible, setIsContainerVisible] = useState<boolean>(false);
     const [isCardsVisible, setIsCardsVisible] = useState<boolean>(false);
+    const {isAuthenticated} = useAuth0()
 
     const [rowRef, rowInView] = useInView({
         threshold: 0.8, // Trigger when 50% of the element is visible
@@ -32,6 +32,10 @@ const Index : React.FC<IndexProps> = (
     const [cardsRef, cardsInView] = useInView({
         threshold: 0.8, // Trigger when 50% of the element is visible
     });
+
+    useEffect(() => {
+        window.location.href = '/home'
+    }, [isAuthenticated]);
 
     useEffect(() => {
         if (rowInView) {
@@ -55,32 +59,16 @@ const Index : React.FC<IndexProps> = (
         <div>
             <Navigation />
             <div id={"index-container"}>
-                <div id={"row-1"} className={"row first-row stick"}>
-                    <video className={"animation"} autoPlay muted loop>
-                        <source src={AnimatedCover} type="video/mp4"/>
-                    </video>
-                </div>
+                <Video id={"row-1"} className={"row first-row stick"} videoClassName={"animation"} videoSrc={AnimatedCover} />
                 <div id={"row-2"} className={"row"}>
                     <img className={"choose-us-graphic"} src={ChooseUs} alt={"Choose Us"}/>
                 </div>
                 <div id={"row-3"} className={"row"}>
                     <h1 className={"title"}>A new way of doing</h1>
                     <div className={"cards"}>
-                        <div id={"card"} className={`${isCardsVisible ? "card-1" : ""}`} ref={cardsRef}>
-                            <div className={"card-content"}>
-                                <h2>Team management</h2>
-                            </div>
-                        </div>
-                        <div id={"card"} className={`${isCardsVisible ? "card-2" : ""}`} ref={cardsRef}>
-                            <div className={"card-content"}>
-                                <h2>Performance analytics</h2>
-                            </div>
-                        </div>
-                        <div id={"card"} className={`${isCardsVisible ? "card-3" : ""}`} ref={cardsRef}>
-                            <div className={"card-content"}>
-                                <h2>Task reminders</h2>
-                            </div>
-                        </div>
+                        <PrimaryCard id={"primary-card"} isCardsVisible={isCardsVisible} className={"card-1"} title={"Team management"} text={""} cardRef={cardsRef} />
+                        <PrimaryCard id={"primary-card"} isCardsVisible={isCardsVisible} className={"card-2"} title={"Performance analytics"} text={""} cardRef={cardsRef} />
+                        <PrimaryCard id={"primary-card"} isCardsVisible={isCardsVisible} className={"card-3"} title={"Task reminders"} text={""} cardRef={cardsRef} />
                     </div>
                 </div>
                 <div id={"row-4"} className={`row ideas-row ${isRowVisible ? "fadeIn" : ""}`} ref={rowRef}>

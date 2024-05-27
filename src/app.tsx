@@ -10,7 +10,7 @@ import Index from "./views/index"
 
 const App : React.FC = () => {
     const {isAuthenticated, error} = useAuth0()
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin] = useState(false)
 
     // Handle authentication errors
     if (error) {
