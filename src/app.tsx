@@ -2,15 +2,22 @@ import React, {useState} from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Routes, Route } from 'react-router-dom';
 
+import { Employee } from './interfaces';
 import "./app.css"
 
-import Admin from "./views/manager/manager.tsx";
-import Employee from "./views/employee/employee.tsx"
+import ManagerView from "./views/manager/manager-view.tsx";
+import EmployeeView from "./views/employee/employee-view.tsx"
 import Index from "./views/index"
 
+// Test sample of the data fetched for current user
+const currentUser: Employee = {
+    id: 1,
+    fullName: "John Doe",
+    isAdmin: false,
+};
 const App : React.FC = () => {
     const {isAuthenticated, error} = useAuth0()
-    const [isAdmin] = useState(false)
+    const [isAdmin] = useState(currentUser.isAdmin)
 
     // Handle authentication errors
     if (error) {
@@ -23,7 +30,18 @@ const App : React.FC = () => {
                 <Routes>
                     <Route path="/" element={<Index />} />
                     { isAuthenticated ?
-                        (isAdmin ? <Route path="/home" element={<Admin/>}/> : <Route path="/home" element={<Employee/>}/>)
+                        (isAdmin ?
+                            <Route path="/home" element={
+                                <ManagerView
+                                    currentUser={currentUser}
+                                />
+                            }/>
+                            :
+                            <Route path="/home" element={
+                                <EmployeeView
+                                    currentUser={currentUser}
+                                />
+                            }/>)
                         :
                         null
                     }

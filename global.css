@@ -42,3 +42,10 @@ h1, h2, h3, h3, h4, h5, h6{
     border: 2px solid white;
     border-radius: 5px;
 }
+
+/* Search bar */
+.search-bar{
+    border: none;
+    padding: 0 2% 0 2%;
+    width: 200px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Manager : React.FC = () => {
+const ManagerView : React.FC = () => {
 
     return (
         <div id={"manager-dashboard"}>
@@ -9,4 +9,4 @@ const Manager : React.FC = () => {
     )
 }
 
-export default Manager;
+export default ManagerView;

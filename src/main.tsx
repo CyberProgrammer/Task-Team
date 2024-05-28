@@ -11,7 +11,6 @@ if (!domain || !clientID) {
     throw new Error('Auth0 domain or client ID is missing');
 }
 
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <Auth0Provider
         domain={domain}
