@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react"
-import { useInView } from "react-intersection-observer";
-import {useAuth0} from "@auth0/auth0-react";
 
 import './index.css'
 
@@ -8,9 +6,9 @@ import AnimatedCover from "../../../assets/animations/VacationAnimated_AME/vacat
 import ChooseUs from "../../../assets/images/index/choose_us.svg"
 import LightBulb from "../../../assets/images/index/lightbulb.svg"
 import Navigation from "../../components/navigation/navigation.tsx";
-import Video from "./video-row/video.tsx";
+import Video from "./components/video-row/video.tsx";
 import PrimaryCard from "./components/primary-card.tsx";
-
+import CheckInView from "./scripts/checkInView.ts";
 
 interface IndexProps {
 
@@ -19,41 +17,15 @@ const Index : React.FC<IndexProps> = ({}) => {
     const [isRowVisible, setIsRowVisible] = useState<boolean>(false);
     const [isContainerVisible, setIsContainerVisible] = useState<boolean>(false);
     const [isCardsVisible, setIsCardsVisible] = useState<boolean>(false);
-    const {isAuthenticated} = useAuth0()
 
-    const [rowRef, rowInView] = useInView({
-        threshold: 0.8, // Trigger when 50% of the element is visible
-    });
-
-    const [containerRef, containerInView] = useInView({
-        threshold: 0.8, // Trigger when 50% of the element is visible
-    });
-
-    const [cardsRef, cardsInView] = useInView({
-        threshold: 0.8, // Trigger when 50% of the element is visible
-    });
+    const { rowRef, containerRef, cardsRef } = CheckInView(setIsRowVisible, setIsContainerVisible, setIsCardsVisible);
 
     useEffect(() => {
-        window.location.href = '/home'
-    }, [isAuthenticated]);
-
-    useEffect(() => {
-        if (rowInView) {
-            setIsRowVisible(true);
-        }
-    }, [rowInView]);
-
-    useEffect(() => {
-        if (containerInView) {
-            setIsContainerVisible(true);
-        }
-    }, [containerInView]);
-
-    useEffect(() => {
-        if (cardsInView) {
-            setIsCardsVisible(true);
-        }
-    }, [cardsInView]);
+        // You can perform side effects here based on visibility state
+        console.log("Row visibility:", isRowVisible);
+        console.log("Container visibility:", isContainerVisible);
+        console.log("Cards visibility:", isCardsVisible);
+    }, [isRowVisible, isContainerVisible, isCardsVisible]);
 
     return(
         <div>

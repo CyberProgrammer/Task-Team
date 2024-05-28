@@ -1,15 +1,12 @@
 import React from "react"
-import {useAuth0} from "@auth0/auth0-react"
 import { Link, useLocation} from "react-router-dom"
 
 import './navigation.css'
 
 import CompanyLogo from "../../../assets/logos/LogoWide.svg"
 import LoginButton from "../buttons/LoginButton.tsx"
-import LogoutButton from "../buttons/LogoutButton.tsx";
 
 const Navigation : React.FC = () => {
-    const {isAuthenticated} = useAuth0()
     const location = useLocation()
     const isIndex = location.pathname === "/"
 
@@ -28,9 +25,7 @@ const Navigation : React.FC = () => {
                 }
             </div>
             <div className={"button-container"}>
-                {isAuthenticated ?
-                    <LogoutButton/> : <LoginButton/>
-                }
+                <LoginButton/>
             </div>
         </nav>
     )
