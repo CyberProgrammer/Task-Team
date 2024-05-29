@@ -6,5 +6,12 @@
 
 #employee-content{
     width: calc(100% - 250px);
+}
+
+.content-dark{
     background-color: #16141c;
+}
+
+.content-light{
+    background-color: #91959D;
 }

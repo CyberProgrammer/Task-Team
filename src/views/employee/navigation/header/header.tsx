@@ -1,11 +1,22 @@
 import React from "react";
-import TeamLogo from "../../../../../assets/logos/TeamLogo.svg";
+import TeamLogoLight from "../../../../../assets/logos/light_mode/TeamLogo.svg";
+import TeamLogoDark from "../../../../../assets/logos/dark_mode/TeamLogo.svg";
 
-const Header : React.FC = () => {
+import {EmployeeInterface} from "../../../../interfaces";
+
+interface HeaderProps {
+    currentUser: EmployeeInterface
+}
+const Header : React.FC<HeaderProps> = (
+    {
+        currentUser,
+    }) => {
+
+    const isDarkMode = currentUser.settings.isDarkMode
 
     return (
         <div id={"side-navigation-header"}>
-            <img id="team-logo" src={TeamLogo} alt="Team Logo"/>
+            <img id="team-logo" src={isDarkMode ? TeamLogoDark : TeamLogoLight} alt="Team Logo"/>
         </div>
     )
 }

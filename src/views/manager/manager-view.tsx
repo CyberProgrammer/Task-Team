@@ -1,10 +1,18 @@
 import React from "react";
+import {Employee} from "../../interfaces";
 
-const ManagerView : React.FC = () => {
+interface ManagerViewProps {
+    currentUser: Employee
+}
+
+const ManagerView : React.FC<ManagerViewProps> = (
+    {
+        currentUser
+    }) => {
 
     return (
         <div id={"manager-dashboard"}>
-            <h2>Manager - Home</h2>
+            <h2>Welcome, {currentUser.fullName}</h2>
         </div>
     )
 }
