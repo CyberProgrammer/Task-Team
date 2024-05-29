@@ -1,0 +1,141 @@
+.deadline-wrapper-dark{
+    color: white;
+    background-color: #0F0E14;
+}
+
+.deadline-wrapper-light{
+    color: #111111;
+    background-color: #91959D;
+}
+
+#upcoming-deadline-wrapper{
+    min-height: 655px;
+    padding: 30px 0 30px 0;
+}
+
+#upcoming-deadline-wrapper .header{
+    padding: 0 0 30px 15px;
+}
+
+/* Table */
+#deadline-table{
+    width: 98%;
+    margin-left: 1%;
+    border-radius: 3px;
+}
+
+.deadline-table-dark{
+    background-color: #24212B;
+}
+
+.deadline-table-light{
+    background-color: #91959D;
+}
+
+.deadline-table-head{
+    padding: 10px;
+    border-bottom: 4px solid #0F0E14;
+}
+
+.deadline-table-head ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.deadline-table-rows{
+    max-height: 500px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.deadline-table-row{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    border-bottom: 2px solid #0F0E14;
+
+}
+
+/* Status select */
+.status-select{
+    height: 25px;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.select-dark{
+    color: white;
+}
+
+.select-light{
+    color: #111111;
+}
+
+.status-option-done{
+    background-color: #0F4F31;
+}
+
+.status-option-progress{
+    background-color: #3157C0;
+}
+
+.status-option-not-started{
+    background-color: #902BF5;
+}
+
+/* Priority select */
+.priority-select{
+    height: 25px;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.priority-option-low{
+    background-color: #0F4F31;
+}
+
+.priority-option-med{
+    background-color: #FED219;
+}
+
+.priority-option-high{
+    background-color: darkred;
+}
+
+/* Table columns */
+.col-1{
+    display: flex;
+    align-items: center;
+    min-width: 40%;
+    max-width: 40%;
+}
+
+.col-2{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.col-3{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.col-4{
+    display: flex;
+    align-items: center;
+    width: 15%;
+    padding-right: 15px;
+}
+
+.col-5{
+    display: flex;
+    align-items: center;
+    width: 15%;
+    padding-right: 15px;
+}
+
+
+
+

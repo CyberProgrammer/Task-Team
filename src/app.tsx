@@ -15,7 +15,7 @@ const currentUser: EmployeeInterface = {
     fullName: "John Doe",
     isAdmin: false,
     settings: {
-        isDarkMode: false
+        isDarkMode: true
     }
 };
 

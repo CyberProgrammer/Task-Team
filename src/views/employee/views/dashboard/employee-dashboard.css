@@ -1,3 +1,7 @@
+#employee-dashboard{
+    overflow: hidden;
+}
+
 /* Toolbar */
 #employee-dashboard .toolbar{
     display: flex;

@@ -6,8 +6,12 @@
 
 #employee-content{
     width: calc(100% - 250px);
+    overflow-y: scroll;
 }
 
+/* 16141c
+
+ */
 .content-dark{
     background-color: #16141c;
 }
