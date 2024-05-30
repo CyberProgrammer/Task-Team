@@ -7,11 +7,10 @@
 #employee-content{
     width: calc(100% - 250px);
     overflow-y: scroll;
+    border-left: 0.25px solid rgba(100, 100, 100, 0.5);
+    border-right: 0.25px solid rgba(100, 100, 100, 0.5);
 }
 
-/* 16141c
-
- */
 .content-dark{
     background-color: #16141c;
 }

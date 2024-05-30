@@ -43,6 +43,15 @@ const DeadlineTable : React.FC<DeadlineTableProps> = (
                 <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
                 <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
                 <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Netus massa luctus pulvinar."} taskAssignee={"Abdullah Wei"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nostra litora parturient accumsan elementum bibendum sociosqu."} taskAssignee={"Brian Raj"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"med"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Curabitur facilisi nascetur ornare."} taskAssignee={"Bibi Jean"} taskDueDate={"16th Oct"} taskStatus={"not-started"} taskPriority={"high"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
+                <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
             </div>
         </div>
     )

@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'PhysisMedium', sans-serif;
+    scroll-behavior: smooth;
 }
 
 html, body{
@@ -19,12 +20,15 @@ h1, h2, h3, h3, h4, h5, h6{
 
 /* Content Global */
 #index{
-    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    background-color: #24212B;
 }
 
 #index .content{
     display: flex;
     height: 100vh;
+    max-width: 1920px;
     background-color: #e5e5e5;
     overflow: hidden;
 }
