@@ -15,9 +15,10 @@ const DoughnutChart : React.FC = () => {
                 data: [5, 10],
                 // you can set individual colors for each bar
                 backgroundColor: [
-                    'green',
-                    'red'
+                    '#0F4F31',
+                    '#B42929'
                 ],
+                borderColor: 'transparent',
                 borderWidth: 1,
             }
         ]

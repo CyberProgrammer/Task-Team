@@ -13,12 +13,12 @@
 
 .toolbar-dark{
     color: white;
-    background-color: #0F0E14;
+    background-color: var(--background-color-dark-secondary);
 }
 
 .toolbar-light{
     color: #111111;
-    background-color: #6D7076;
+    background-color: var(--background-color-light-secondary);
 }
 
 #employee-dashboard .toolbar-left{
@@ -29,7 +29,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 0 5% 0 5%;
     width: 25%;
 }
 

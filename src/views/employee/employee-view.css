@@ -12,9 +12,9 @@
 }
 
 .content-dark{
-    background-color: #16141c;
+    background-color: var(--background-color-dark-primary);
 }
 
 .content-light{
-    background-color: #91959D;
+    background-color: var(--background-color-light-primary);
 }

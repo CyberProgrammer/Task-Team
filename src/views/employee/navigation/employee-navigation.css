@@ -11,11 +11,11 @@
 }
 
 .dark-navigation{
-    background-color: #16141c;
+    background-color: var(--background-color-dark-primary);
 }
 
 .light-navigation{
-    background-color: #91959D;
+    background-color: var(--background-color-light-primary);
 }
 
 /* Header */
@@ -59,12 +59,12 @@
 
 #side-navigation-links .darkControlButton:hover{
     cursor: pointer;
-    background-color: #24212B;
+    background-color: var(--background-color-dark-alternate);
 }
 
 .selected-dark{
     color: white;
-    background-color: #24212B !important;
+    background-color: var(--background-color-dark-alternate) !important;
 }
 
 #side-navigation-links .lightControlButton{
@@ -83,12 +83,12 @@
 
 #side-navigation-links .lightControlButton:hover{
     cursor: pointer;
-    background-color: #6D7076;
+    background-color: var(--background-color-light-secondary);
 }
 
 .selected-light{
     color: black;
-    background-color: #6D7076 !important;
+    background-color: var(--background-color-light-secondary) !important;
 }
 
 #side-navigation-links .icon-div{

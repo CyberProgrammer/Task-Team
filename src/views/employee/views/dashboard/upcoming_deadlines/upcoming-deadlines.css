@@ -1,11 +1,11 @@
 .deadline-wrapper-dark{
     color: white;
-    background-color: #0F0E14;
+    background-color: var(--background-color-dark-secondary);
 }
 
 .deadline-wrapper-light{
     color: #111111;
-    background-color: #91959D;
+    background-color: var(--background-color-light-secondary);
 }
 
 #upcoming-deadline-wrapper{
@@ -25,16 +25,16 @@
 }
 
 .deadline-table-dark{
-    background-color: #24212B;
+    background-color: var(--background-color-dark-alternate);
 }
 
 .deadline-table-light{
-    background-color: #91959D;
+    background-color: var(--background-color-light-alternate);
 }
 
 .deadline-table-head{
     padding: 10px;
-    border-bottom: 4px solid #0F0E14;
+    border-bottom: 4px solid var(--background-color-dark-secondary);
 }
 
 .deadline-table-head ul{
@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: row;
     padding: 1%;
-    border-bottom: 2px solid #0F0E14;
+    border-bottom: 2px solid var(--background-color-dark-secondary);
 
 }
 
@@ -76,16 +76,28 @@ option::selection{
     color: #111111;
 }
 
-.status-option-done{
+.status-option-done-dark{
     background-color: #0F4F31;
 }
 
-.status-option-progress{
+.status-option-progress-dark{
     background-color: #3157C0;
 }
 
-.status-option-not-started{
+.status-option-not-started-dark{
     background-color: #902BF5;
+}
+
+.status-option-done-light{
+    background-color: #3f725a;
+}
+
+.status-option-progress-light{
+    background-color: #6f89d3;
+}
+
+.status-option-not-started-light{
+    background-color: #b16bf8;
 }
 
 /* Priority select */
@@ -95,16 +107,28 @@ option::selection{
     border: transparent;
 }
 
-.priority-option-low{
+.priority-option-low-dark{
     background-color: #0F4F31;
 }
 
-.priority-option-med{
+.priority-option-med-dark{
     background-color: #FED219;
 }
 
-.priority-option-high{
-    background-color: darkred;
+.priority-option-high-dark{
+    background-color: #B42929;
+}
+
+.priority-option-low-light{
+    background-color: #3f725a;
+}
+
+.priority-option-med-light{
+    background-color: #fee05e;
+}
+
+.priority-option-high-light{
+    background-color: #bc3e3e;
 }
 
 /* Table columns */
