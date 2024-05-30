@@ -11,12 +11,12 @@
 
 .analytics-dark{
     color: white;
-    background-color: #0F0E14;
+    background-color: var(--background-color-dark-secondary);
 }
 
 .analytics-light{
     color: #111111;
-    background-color: #6D7076;
+    background-color: var(--background-color-light-secondary);
 }
 
 #data-card{
@@ -42,11 +42,11 @@
     text-align: center;
 }
 .data-card-dark{
-    background-color: #24212B;
+    background-color: var(--background-color-dark-alternate);
 }
 
 .data-card-light{
-    background-color: #91959D;
+    background-color: var(--background-color-light-primary);
 }
 
 #data-card h3{

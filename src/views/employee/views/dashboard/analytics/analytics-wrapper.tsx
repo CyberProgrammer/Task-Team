@@ -2,7 +2,7 @@ import React from "react";
 
 import './analytics-wrapper.css'
 import {EmployeeInterface} from "../../../../../interfaces";
-import PieChart from "./charts/doughnut-chart.tsx";
+import DoughnutChart from "./charts/doughnut-chart.tsx";
 
 interface AnalyticsWrapperProps {
     currentUser: EmployeeInterface
@@ -50,7 +50,7 @@ const AnalyticsWrapper : React.FC<AnalyticsWrapperProps> = (
                     <h3>Completion percentage</h3>
                 </div>
                 <div className={"data-card-content"}>
-                    <PieChart />
+                    <DoughnutChart />
                 </div>
             </div>
         </div>

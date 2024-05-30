@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {EmployeeInterface} from "../../../../../../../interfaces";
+import StatusOption from "./status-option.tsx";
 
 interface StatusSelectProps{
     currentUser: EmployeeInterface
@@ -13,7 +14,6 @@ const StatusSelect : React.FC<StatusSelectProps> = (
 
     const isDarkMode = currentUser.settings.isDarkMode;
     const [statusClass, setStatusClass] = useState(taskStatus);
-
     const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = event.target.value;
         if (newStatus === "done") setStatusClass("status-option-done");
@@ -27,11 +27,11 @@ const StatusSelect : React.FC<StatusSelectProps> = (
     }, [taskStatus]);
 
     return (
-        <select className={`status-select ${statusClass} ${isDarkMode ? "select-dark" : "select-light"}`}
+        <select className={`status-select ${statusClass}${isDarkMode ? "-dark" : "-light"} ${isDarkMode ? "select-dark" : "select-light"}`}
                 defaultValue={taskStatus} onChange={handleStatusChange}>
-            <option className={"status-option-done"} value={"done"}>Done</option>
-            <option className={"status-option-progress"} value={"progress"}>In progress</option>
-            <option className={"status-option-not-started"} value={"not-started"}>Not started</option>
+            <StatusOption text={"Done"} value={"done"} isDarkMode={isDarkMode} />
+            <StatusOption text={"In progress"} value={"progress"} isDarkMode={isDarkMode} />
+            <StatusOption text={"Not started"} value={"not-started"} isDarkMode={isDarkMode} />
         </select>
     )
 }

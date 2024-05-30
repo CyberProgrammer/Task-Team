@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {EmployeeInterface} from "../../../../../../../interfaces";
+import PriorityOption from "./priority-option.tsx";
 
 interface PrioritySelectProps {
     currentUser: EmployeeInterface
@@ -26,11 +27,11 @@ const PrioritySelect : React.FC<PrioritySelectProps> = (
     }, [taskPriority]);
 
     return (
-        <select className={`priority-select ${priorityClass} ${isDarkMode ? "select-dark" : "select-light"}`} defaultValue={taskPriority}
+        <select className={`priority-select ${priorityClass}${isDarkMode ? "-dark" : "-light"} ${isDarkMode ? "select-dark" : "select-light"}`} defaultValue={taskPriority}
                 onChange={handlePriorityChange}>
-            <option className={"priority-option-low"} value={"low"}>Low</option>
-            <option className={"priority-option-med"} value={"med"}>Med</option>
-            <option className={"priority-option-high"} value={"high"}>High</option>
+            <PriorityOption text={"Low"} value={"low"} isDarkMode={isDarkMode} />
+            <PriorityOption text={"Med"} value={"med"} isDarkMode={isDarkMode} />
+            <PriorityOption text={"High"} value={"high"} isDarkMode={isDarkMode} />
         </select>
     )
 }
