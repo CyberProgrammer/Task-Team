@@ -1,9 +1,21 @@
 import React from "react";
+import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import {EmployeeInterface} from "../../../../interfaces";
+import Content from "./content/content.tsx"
 
-const EmployeeTeams : React.FC = () => {
+interface EmployeeTeamsProps{
+    currentUser: EmployeeInterface;
+}
+const EmployeeTeams : React.FC<EmployeeTeamsProps> = (
+    {
+        currentUser
+    }) => {
 
     return (
-        <h1>Teams Employee - LoggedIn</h1>
+        <div id={"employee-container"}>
+            <EmployeeNavigation currentUser={currentUser}/>
+            <Content currentUser={currentUser}/>
+        </div>
     )
 }
 

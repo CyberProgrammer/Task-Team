@@ -1,9 +1,20 @@
 import React from "react";
-
-const EmployeeProgress : React.FC = () => {
+import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import {EmployeeInterface} from "../../../../interfaces";
+import Content from "./content/content.tsx"
+interface EmployeeProgressProps{
+    currentUser: EmployeeInterface;
+}
+const EmployeeProgress : React.FC<EmployeeProgressProps> = (
+    {
+        currentUser
+    }) => {
 
     return(
-        <h1>Progress Employee </h1>
+        <div id={"employee-container"}>
+            <EmployeeNavigation currentUser={currentUser}/>
+            <Content currentUser={currentUser}/>
+        </div>
     )
 }
 

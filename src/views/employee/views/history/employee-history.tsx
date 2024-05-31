@@ -1,9 +1,20 @@
 import React from "react";
-
-const EmployeeHistory : React.FC = () => {
+import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import {EmployeeInterface} from "../../../../interfaces";
+import Content from "./content/content.tsx"
+interface EmployeeHistoryProps{
+    currentUser: EmployeeInterface
+}
+const EmployeeHistory : React.FC<EmployeeHistoryProps> = (
+    {
+        currentUser
+    }) => {
 
     return (
-        <h1>History Employee - LoggedIn</h1>
+        <div id={"employee-container"}>
+            <EmployeeNavigation currentUser={currentUser}/>
+            <Content currentUser={currentUser}/>
+        </div>
     )
 }
 

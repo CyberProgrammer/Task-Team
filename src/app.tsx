@@ -48,9 +48,9 @@ const App : React.FC = () => {
                             <>
                                 <Route path="/home" element={<EmployeeDashboard currentUser={currentUser}/>}/>
                                 <Route path="/employee/tasks" element={<EmployeeTasks currentUser={currentUser}/>}/>
-                                <Route path="/employee/teams" element={<EmployeeTeams/>}/>
-                                <Route path="/employee/progress" element={<EmployeeProgress/>}/>
-                                <Route path="/employee/history" element={<EmployeeHistory/>}/>
+                                <Route path="/employee/teams" element={<EmployeeTeams currentUser={currentUser}/>}/>
+                                <Route path="/employee/progress" element={<EmployeeProgress currentUser={currentUser}/>}/>
+                                <Route path="/employee/history" element={<EmployeeHistory currentUser={currentUser}/>}/>
                                 <Route path="/employee/settings" element={<Settings/>}/>
                             </>
                         )
