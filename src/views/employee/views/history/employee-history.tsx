@@ -1,10 +1,10 @@
 import React from "react";
 
-const History : React.FC = () => {
+const EmployeeHistory : React.FC = () => {
 
     return (
         <h1>History Employee - LoggedIn</h1>
     )
 }
 
-export default History;
+export default EmployeeHistory;
