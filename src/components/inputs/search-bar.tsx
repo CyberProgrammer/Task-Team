@@ -1,9 +1,17 @@
 import React from "react";
 
-const SearchBar : React.FC = () => {
+interface SearchBarProps {
+    className?: string;
+    onChange?: () => void;
+}
+const SearchBar : React.FC<SearchBarProps> = (
+    {
+        className,
+        onChange
+    }) => {
 
     return (
-        <input className={"search-bar"} type={"text"} placeholder={"Search..."}/>
+        <input className={className} type={"text"} placeholder={"Search..."} onChange={onChange}/>
     )
 }
 

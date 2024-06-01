@@ -1,0 +1,48 @@
+#tasks-table {
+    width: 98%;
+    max-height: 90vh;
+    border-radius: 10px;
+    padding: 2%;
+    margin: auto;
+}
+
+.tasks-table-dark{
+    color: white;
+    background-color: var(--background-color-dark-secondary);
+}
+
+.tasks-table-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}
+
+.tasks-table-head ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.tasks-table-rows{
+    max-height: 80vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    margin: 2% 0 0 0;
+}
+
+.tasks-table-row{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    border-radius: 3px;
+    padding: 1%;
+    background-color: var(--background-color-dark-alternate);
+    border-bottom: 2px solid var(--background-color-dark-secondary);
+}
+
+.tasks-table-search{
+    border: none;
+    border-radius: 5px;
+    padding: 0 2% 0 2%;
+    width: 300px;
+    height: 35px;
+}

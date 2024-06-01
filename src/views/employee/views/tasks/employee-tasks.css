@@ -1,0 +1,73 @@
+#employee-content{
+    overflow: hidden !important;
+}
+
+#tasks-toolbar{
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.tasks-toolbar-dark{
+
+}
+
+.tasks-toolbar-light{
+
+}
+
+.toolbar-container-left{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
+.toolbar-container-center{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.toolbar-container-right{
+    display: flex;
+    justify-items: center;
+    width: 25%;
+    padding-right: 5%;
+}
+
+.toolbar-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: transparent;
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+    height: 40px;
+    width: 125px;
+}
+
+.toolbar-button:hover{
+    cursor: pointer;
+}
+
+.toolbar-button-dark{
+    color: white;
+    background-color: var(--background-color-dark-alternate);
+}
+
+.tasks-toolbar-light{
+    color: #111111;
+    background-color: var(--background-color-light-alternate);
+}
+
+.toolbar-button-icon{
+    height: 75%;
+    width: 50%;
+}

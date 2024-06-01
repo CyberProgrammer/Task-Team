@@ -27,7 +27,7 @@ const Content : React.FC<ContentProps> = (
                         <h2>Welcome, {currentUser.fullName}</h2>
                     </div>
                     <div className={"toolbar-right"}>
-                        <SearchBar/>
+                        <SearchBar className={"search-bar"}/>
                         <img className={"icon"}
                              src={isDarkMode ?
                                  isUnreadNotification ? NotificationUnreadIconDark : NotificationReadIconDark
