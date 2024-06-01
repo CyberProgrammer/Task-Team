@@ -2,13 +2,12 @@ import React, {useState} from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Routes, Route} from 'react-router-dom';
 
-import {EmployeeInterface} from './interfaces';
+import { usersList, tasksList } from './data/constants.ts';
+import {EmployeeInterface, EmployeeListInterface, TasksInterface} from './interfaces';
+
 import "./app.css"
 
 import ManagerView from "./views/manager/manager-view.tsx";
-
-//import EmployeeView from "./views/employee/employee-view.tsx";
-
 import Index from "./views/index"
 import EmployeeTasks from "./views/employee/views/tasks/employee-tasks.tsx";
 import EmployeeTeams from "./views/employee/views/teams/employee-teams.tsx";
@@ -26,10 +25,12 @@ const currentUser: EmployeeInterface = {
         isDarkMode: true
     }
 };
-
 const App : React.FC = () => {
     const {isAuthenticated, error} = useAuth0()
     const [isAdmin] = useState(currentUser.isAdmin)
+
+    const [currentUsers, setCurrentUsers] = useState<EmployeeListInterface[]>(usersList)
+    const [currentTasks, setCurrentTasks] = useState<TasksInterface[]>(tasksList);
 
     // Handle authentication errors
     if (error) {
@@ -47,7 +48,7 @@ const App : React.FC = () => {
                         ) : (
                             <>
                                 <Route path="/home" element={<EmployeeDashboard currentUser={currentUser}/>}/>
-                                <Route path="/employee/tasks" element={<EmployeeTasks currentUser={currentUser}/>}/>
+                                <Route path="/employee/tasks" element={<EmployeeTasks currentUser={currentUser} currentUsers={currentUsers} currentTasks={currentTasks}/>}/>
                                 <Route path="/employee/teams" element={<EmployeeTeams currentUser={currentUser}/>}/>
                                 <Route path="/employee/progress" element={<EmployeeProgress currentUser={currentUser}/>}/>
                                 <Route path="/employee/history" element={<EmployeeHistory currentUser={currentUser}/>}/>

@@ -6,7 +6,7 @@ import {EmployeeInterface} from "../../../../../../../interfaces";
 interface TasksTableRowProps {
     currentUser: EmployeeInterface
     title: string
-    asignee: string
+    assignee: string
     dueDate: string
     taskStatus: string
     taskPriority: string
@@ -15,7 +15,7 @@ const TasksTableRow : React.FC<TasksTableRowProps> = (
     {
         currentUser,
         title,
-        asignee,
+        assignee,
         dueDate,
         taskStatus,
         taskPriority
@@ -30,7 +30,7 @@ const TasksTableRow : React.FC<TasksTableRowProps> = (
                 <p>{title}</p>
             </div>
             <div className={"col-2"}>
-                <p>{asignee}</p>
+                <p>{assignee}</p>
             </div>
             <div className={"col-3"}>
                 <p>{dueDate}</p>

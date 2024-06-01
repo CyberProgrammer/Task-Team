@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "fullName": "John Doe",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": 2,
+    "fullName": "Shan Su",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": 3,
+    "fullName": "Manuel He",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": 4,
+    "fullName": "Jianhua Nawaz",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  }
+]

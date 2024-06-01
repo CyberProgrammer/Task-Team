@@ -25,7 +25,6 @@ const TasksToolbar : React.FC<TasksToolbarProps> = (
 
     const isDarkMode = currentUser.settings.isDarkMode;
 
-
     return(
         <div id={"tasks-toolbar"} className={isDarkMode ? "tasks-toolbar-dark" : "tasks-toolbar-light"}>
             <div className={"toolbar-container"}>

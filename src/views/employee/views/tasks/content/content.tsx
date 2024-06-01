@@ -3,7 +3,7 @@ import useMenuHandlers from "../functions/handleMenus.tsx"
 
 import '../employee-tasks.css'
 
-import {EmployeeInterface} from "../../../../../interfaces";
+import {EmployeeInterface, EmployeeListInterface, TasksInterface} from "../../../../../interfaces";
 import TasksToolbar from "./toolbar/tasks-toolbar.tsx";
 import TasksTable from "./table/tasks-table.tsx";
 import AddTaskMenu from "./menus/add-task-menu.tsx";
@@ -11,11 +11,15 @@ import FilterMenu from "./menus/filter-menu.tsx";
 import SortMenu from "./menus/sort-menu.tsx";
 
 interface ContentProps{
-    currentUser: EmployeeInterface;
+    currentUser: EmployeeInterface
+    currentUsers: EmployeeListInterface[]
+    currentTasks: TasksInterface[]
 }
 const Content : React.FC<ContentProps> = (
     {
-        currentUser
+        currentUser,
+        currentUsers,
+        currentTasks
     }) => {
 
     const isDarkMode = currentUser.settings.isDarkMode;
@@ -44,7 +48,7 @@ const Content : React.FC<ContentProps> = (
                 {addTaskMenuOpen ?
                     <AddTaskMenu currentUser={currentUser} toggleAddTaskMenu={() => toggleMenu('addTask')}/>
                     :
-                    <TasksTable currentUser={currentUser} />
+                    <TasksTable currentUser={currentUser} currentUsers={currentUsers} currentTasks={currentTasks}/>
                 }
             </div>
         </div>
