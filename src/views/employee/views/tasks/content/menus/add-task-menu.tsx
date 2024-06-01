@@ -3,25 +3,21 @@ import {EmployeeInterface} from "../../../../../../interfaces";
 
 interface AddTaskMenuProps {
     currentUser: EmployeeInterface
-    setAddTaskMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+    toggleAddTaskMenu: () => void;
 }
 
 const AddTaskMenu : React.FC<AddTaskMenuProps> = (
     {
         currentUser,
-        setAddTaskMenuOpen
+        toggleAddTaskMenu
     }) => {
 
     const isDarkMode = currentUser.settings.isDarkMode;
 
-    const  handleCloseClick = () => {
-        setAddTaskMenuOpen(false);
-    }
-
     return(
         <div id={"add-task-menu"}>
             <p>Add menu</p>
-            <button onClick={handleCloseClick}>
+            <button onClick={toggleAddTaskMenu}>
                 Close
             </button>
         </div>

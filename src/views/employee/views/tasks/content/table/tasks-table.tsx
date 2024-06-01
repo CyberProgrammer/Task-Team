@@ -17,7 +17,7 @@ const TasksTable : React.FC<TasksTableProps> = (
 
     return(
         <div id={"tasks-table"} className={isDarkMode ? "tasks-table-dark" : "tasks-table-light"}>
-            <div className={"tasks-table-head"}>
+            <div className={`tasks-table-head ${isDarkMode ? "tasks-table-head-dark" : "tasks-table-head-light"}`}>
                 <ul>
                     <li className={"col-1"}>
                         <h4>Task name</h4>

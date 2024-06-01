@@ -3,15 +3,27 @@
     max-height: 90vh;
     border-radius: 10px;
     padding: 2%;
-    margin: auto;
 }
 
 .tasks-table-dark{
     color: white;
-    background-color: var(--background-color-dark-secondary);
 }
 
 .tasks-table-light{
+    color: #111111;
+}
+
+.tasks-table-head{
+    border-radius: 10px 10px 0 0;
+    padding: 3% 1% 2% 1%;
+}
+
+.tasks-table-head-dark{
+    color: white;
+    background-color: var(--background-color-dark-secondary);
+}
+
+.tasks-table-head-light{
     color: #111111;
     background-color: var(--background-color-light-primary);
 }
@@ -26,7 +38,6 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    margin: 2% 0 0 0;
 }
 
 .tasks-table-row{
