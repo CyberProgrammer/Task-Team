@@ -1,17 +1,16 @@
 import React from "react";
-import {EmployeeInterface} from "../../../../../../interfaces";
+import {useUser} from "../../../../../../contexts/user_context.tsx";
 
 interface AddTaskMenuProps {
-    currentUser: EmployeeInterface
     toggleAddTaskMenu: () => void;
 }
 
 const AddTaskMenu : React.FC<AddTaskMenuProps> = (
     {
-        currentUser,
-        toggleAddTaskMenu
+        toggleAddTaskMenu,
     }) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return(

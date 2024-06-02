@@ -2,7 +2,6 @@ import React from "react";
 
 import './employee-navigation.css'
 import {Constants} from "../utils/constants.ts"
-import {EmployeeInterface} from "../../../interfaces";
 
 import Header from "./header/header.tsx"
 import Footer from "./footer/footer.tsx"
@@ -22,16 +21,15 @@ import HistoryIconDark from "../../../../assets/icons/dark_mode/history.svg"
 import SettingIconLight from "../../../../assets/icons/light_mode/setting.svg"
 import SettingIconDark from "../../../../assets/icons/dark_mode/setting.svg"
 import {useLocation} from "react-router-dom";
+import {useUser} from "../../../contexts/user_context.tsx";
 
 
 interface EmployeeNavigationProps {
-    currentUser: EmployeeInterface
+
 }
 
-const EmployeeNavigation : React.FC<EmployeeNavigationProps> = (
-    {
-        currentUser
-    }) => {
+const EmployeeNavigation : React.FC<EmployeeNavigationProps> = ({}) => {
+    const {currentUser} = useUser()
 
     const location = useLocation();
     const isDarkMode = currentUser.settings.isDarkMode
@@ -47,13 +45,12 @@ const EmployeeNavigation : React.FC<EmployeeNavigationProps> = (
 
     return (
         <div id="side-navigation" className={isDarkMode ? "dark-navigation" : "light-navigation"}>
-            <Header currentUser={currentUser}/>
+            <Header />
             <div id="side-navigation-links">
                 {sections.map(section => (
                     <NavigationButton
                         key={section.text}
                         icon={isDarkMode ? section.iconDark : section.iconLight}
-                        currentUser={currentUser}
                         isSelected={location.pathname === section.path}
                         text={section.text}
                         path={section.path}

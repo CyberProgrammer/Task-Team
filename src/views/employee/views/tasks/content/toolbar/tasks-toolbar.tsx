@@ -1,5 +1,4 @@
 import React from "react";
-import {EmployeeInterface} from "../../../../../../interfaces";
 
 import AddIconDark from '../../../../../../../assets/icons/dark_mode/add.svg'
 import FilterIconDark from '../../../../../../../assets/icons/dark_mode/filter.svg'
@@ -8,8 +7,8 @@ import AddIconLight from '../../../../../../../assets/icons/light_mode/add.svg'
 import FilterIconLight from '../../../../../../../assets/icons/light_mode/filter.svg'
 import SortIconLight from '../../../../../../../assets/icons/light_mode/sort.svg'
 import SearchBar from "../../../../../../components/inputs/search-bar.tsx";
+import {useUser} from "../../../../../../contexts/user_context.tsx";
 interface TasksToolbarProps {
-    currentUser: EmployeeInterface
     handleAddTaskMenu: () => void
     handleOpenFilterMenu: () => void
     handleSortMenu: () => void
@@ -17,12 +16,12 @@ interface TasksToolbarProps {
 
 const TasksToolbar : React.FC<TasksToolbarProps> = (
     {
-        currentUser,
         handleAddTaskMenu,
         handleOpenFilterMenu,
         handleSortMenu
     }) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return(

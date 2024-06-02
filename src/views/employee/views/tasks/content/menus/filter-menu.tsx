@@ -1,15 +1,13 @@
 import React from "react";
-import {EmployeeInterface} from "../../../../../../interfaces";
 import useFilterHandlers from "../../functions/handleFilterOptions.tsx";
+import {useUser} from "../../../../../../contexts/user_context.tsx";
 
 interface FilterMenuProps {
-    currentUser: EmployeeInterface
-}
-const FilterMenu : React.FC<FilterMenuProps> = (
-    {
-        currentUser,
-    }) => {
 
+}
+const FilterMenu : React.FC<FilterMenuProps> = ({}) => {
+
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     const {selectedStatusFilter, selectedPriorityFilter, selectedAssigneeFilter, handleStatusChange, handlePriorityChange, handleAssigneeChange,} = useFilterHandlers()

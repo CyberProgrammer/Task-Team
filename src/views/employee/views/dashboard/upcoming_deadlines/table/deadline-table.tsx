@@ -1,14 +1,12 @@
 import React from "react";
-import {EmployeeInterface} from "../../../../../../interfaces";
 import DeadlineTableRow from "./rows/deadline-table-row.tsx";
+import {useUser} from "../../../../../../contexts/user_context.tsx";
 
 interface DeadlineTableProps {
-    currentUser: EmployeeInterface
+
 }
-const DeadlineTable : React.FC<DeadlineTableProps> = (
-    {
-        currentUser
-    }) => {
+const DeadlineTable : React.FC<DeadlineTableProps> = ({}) => {
+    const {currentUser} = useUser();
 
     const isDarkMode = currentUser.settings.isDarkMode
 

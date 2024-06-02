@@ -1,10 +1,9 @@
 import React from "react";
-import StatusSelect from "../../../../dashboard/upcoming_deadlines/table/select/status-select.tsx";
-import PrioritySelect from "../../../../dashboard/upcoming_deadlines/table/select/priority-select.tsx";
-import {EmployeeInterface} from "../../../../../../../interfaces";
+import StatusSelect from "../../../../../../../components/select/status-select.tsx";
+import PrioritySelect from "../../../../../../../components/select/priority-select.tsx";
+import {useUser} from "../../../../../../../contexts/user_context.tsx";
 
 interface TasksTableRowProps {
-    currentUser: EmployeeInterface
     title: string
     assignee: string
     dueDate: string
@@ -13,7 +12,6 @@ interface TasksTableRowProps {
 }
 const TasksTableRow : React.FC<TasksTableRowProps> = (
     {
-        currentUser,
         title,
         assignee,
         dueDate,
@@ -21,6 +19,7 @@ const TasksTableRow : React.FC<TasksTableRowProps> = (
         taskPriority
     }) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return (
@@ -36,10 +35,10 @@ const TasksTableRow : React.FC<TasksTableRowProps> = (
                 <p>{dueDate}</p>
             </div>
             <div className={"col-4"}>
-                <StatusSelect currentUser={currentUser} taskStatus={taskStatus}/>
+                <StatusSelect taskStatus={taskStatus}/>
             </div>
             <div className={"col-5"}>
-                <PrioritySelect currentUser={currentUser} taskPriority={taskPriority}/>
+                <PrioritySelect taskPriority={taskPriority}/>
             </div>
         </div>
     )

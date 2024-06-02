@@ -2,21 +2,21 @@ import React from "react";
 
 import "./tasks-table.css"
 
-import {EmployeeInterface, EmployeeListInterface, TasksInterface} from "../../../../../../interfaces";
+import {EmployeeListInterface, TasksInterface} from "../../../../../../interfaces";
 import TasksTableRow from "./row/tasks-table-row.tsx";
+import {useUser} from "../../../../../../contexts/user_context.tsx";
 
 interface TasksTableProps{
-    currentUser: EmployeeInterface
     currentUsers: EmployeeListInterface[]
     currentTasks: TasksInterface[]
 }
 const TasksTable : React.FC<TasksTableProps> = (
     {
-        currentUser,
         currentUsers,
-        currentTasks
+        currentTasks,
     }) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return(
@@ -52,7 +52,6 @@ const TasksTable : React.FC<TasksTableProps> = (
                     return (
                         <TasksTableRow
                             key={index}
-                            currentUser={currentUser}
                             title={task.title}
                             assignee={foundAssignee}
                             dueDate={task.dueDate}

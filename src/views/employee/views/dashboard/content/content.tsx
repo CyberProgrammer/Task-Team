@@ -6,16 +6,13 @@ import NotificationUnreadIconLight from "../../../../../../assets/icons/light_mo
 import NotificationReadIconLight from "../../../../../../assets/icons/light_mode/notification_read.svg";
 import AnalyticsWrapper from "../analytics/analytics-wrapper.tsx";
 import UpcomingDeadline from "../upcoming_deadlines/upcoming-deadlines.tsx";
-import {EmployeeInterface} from "../../../../../interfaces";
+import {useUser} from "../../../../../contexts/user_context.tsx";
 
 interface ContentProps{
-    currentUser: EmployeeInterface;
-}
-const Content : React.FC<ContentProps> = (
-    {
-        currentUser
-    }) => {
 
+}
+const Content : React.FC<ContentProps> = ({}) => {
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
     const isUnreadNotification = true;
 
@@ -40,8 +37,8 @@ const Content : React.FC<ContentProps> = (
                     </div>
                 </div>
                 <div className={"container"}>
-                    <AnalyticsWrapper currentUser={currentUser}/>
-                    <UpcomingDeadline currentUser={currentUser}/>
+                    <AnalyticsWrapper />
+                    <UpcomingDeadline />
                 </div>
             </div>
         </div>

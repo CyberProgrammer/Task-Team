@@ -1,7 +1,7 @@
 import React from "react";
 import {EmployeeInterface} from "../../../../../../../interfaces";
-import StatusSelect from "../select/status-select.tsx";
-import PrioritySelect from "../select/priority-select.tsx";
+import StatusSelect from "../../../../../../../components/select/status-select.tsx";
+import PrioritySelect from "../../../../../../../components/select/priority-select.tsx";
 
 interface DeadlineTableRowProps {
     currentUser: EmployeeInterface
@@ -36,10 +36,10 @@ const DeadlineTableRow : React.FC<DeadlineTableRowProps> = (
                 <p>{taskDueDate}</p>
             </div>
             <div className={"col-4"}>
-                <StatusSelect currentUser={currentUser} taskStatus={taskStatus}/>
+                <StatusSelect taskStatus={taskStatus}/>
             </div>
             <div className={"col-5"}>
-                <PrioritySelect currentUser={currentUser} taskPriority={taskPriority}/>
+                <PrioritySelect taskPriority={taskPriority}/>
             </div>
         </div>
     )

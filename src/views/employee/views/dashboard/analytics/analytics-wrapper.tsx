@@ -1,18 +1,15 @@
 import React from "react";
 
 import './analytics-wrapper.css'
-import {EmployeeInterface} from "../../../../../interfaces";
 import DoughnutChart from "./charts/doughnut-chart.tsx";
+import {useUser} from "../../../../../contexts/user_context.tsx";
 
 interface AnalyticsWrapperProps {
-    currentUser: EmployeeInterface
 }
 
-const AnalyticsWrapper : React.FC<AnalyticsWrapperProps> = (
-    {
-        currentUser
-    }) => {
+const AnalyticsWrapper : React.FC<AnalyticsWrapperProps> = ({}) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode
 
     const tasksAssignedCount = 5;

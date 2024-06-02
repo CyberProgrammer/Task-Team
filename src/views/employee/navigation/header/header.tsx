@@ -1,16 +1,12 @@
 import React from "react";
 import TeamLogoLight from "../../../../../assets/logos/light_mode/TeamLogo.svg";
 import TeamLogoDark from "../../../../../assets/logos/dark_mode/TeamLogo.svg";
-
-import {EmployeeInterface} from "../../../../interfaces";
+import {useUser} from "../../../../contexts/user_context.tsx";
 
 interface HeaderProps {
-    currentUser: EmployeeInterface
 }
-const Header : React.FC<HeaderProps> = (
-    {
-        currentUser,
-    }) => {
+const Header : React.FC<HeaderProps> = ({}) => {
+    const {currentUser} = useUser();
 
     const isDarkMode = currentUser.settings.isDarkMode
 

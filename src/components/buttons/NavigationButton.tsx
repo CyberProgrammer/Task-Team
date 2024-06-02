@@ -1,15 +1,16 @@
 import React from "react";
-import {EmployeeInterface} from "../../interfaces";
 import {useNavigate} from "react-router-dom";
+import {useUser} from "../../contexts/user_context.tsx";
 
 interface ControlButtonProps {
     icon: string;
     isSelected: boolean
     text: string
     path: string
-    currentUser: EmployeeInterface
 }
-const NavigationButton : React.FC<ControlButtonProps> = ({currentUser, icon, isSelected, text, path}) => {
+const NavigationButton : React.FC<ControlButtonProps> = ({icon, isSelected, text, path}) => {
+    const {currentUser} = useUser();
+
     const navigate = useNavigate();
 
     const handleClick = () => {

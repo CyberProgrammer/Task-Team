@@ -1,14 +1,10 @@
 import React from "react"
-import {EmployeeInterface} from "../../../../../../interfaces";
+import {useUser} from "../../../../../../contexts/user_context.tsx";
 
 interface SortMenuProps {
-    currentUser: EmployeeInterface
 }
-const SortMenu : React.FC<SortMenuProps> = (
-    {
-        currentUser
-    }) => {
-
+const SortMenu : React.FC<SortMenuProps> = ({}) => {
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return (
