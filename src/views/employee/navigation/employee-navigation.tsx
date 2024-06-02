@@ -2,7 +2,6 @@ import React from "react";
 
 import './employee-navigation.css'
 import {Constants} from "../utils/constants.ts"
-import {EmployeeInterface} from "../../../interfaces";
 
 import Header from "./header/header.tsx"
 import Footer from "./footer/footer.tsx"
@@ -21,35 +20,44 @@ import HistoryIconLight from "../../../../assets/icons/light_mode/history.svg"
 import HistoryIconDark from "../../../../assets/icons/dark_mode/history.svg"
 import SettingIconLight from "../../../../assets/icons/light_mode/setting.svg"
 import SettingIconDark from "../../../../assets/icons/dark_mode/setting.svg"
+import {useLocation} from "react-router-dom";
+import {useUser} from "../../../contexts/user_context.tsx";
 
 
 interface EmployeeNavigationProps {
-    selectedSection: string
-    setSelectedSection: React.Dispatch<React.SetStateAction<string>>
-    currentUser: EmployeeInterface
+
 }
 
-const EmployeeNavigation : React.FC<EmployeeNavigationProps> = (
-    {
-        selectedSection,
-        setSelectedSection,
-        currentUser
-    }) => {
+const EmployeeNavigation : React.FC<EmployeeNavigationProps> = ({}) => {
+    const {currentUser} = useUser()
 
+    const location = useLocation();
     const isDarkMode = currentUser.settings.isDarkMode
 
+    const sections = [
+        { text: Constants.DASHBOARD, path: "/home", iconLight: DashboardIconLight, iconDark: DashboardIconDark },
+        { text: Constants.TASKS, path: "/employee/tasks", iconLight: TaskIconLight, iconDark: TaskIconDark },
+        { text: Constants.TEAMS, path: "/employee/teams", iconLight: TeamIconLight, iconDark: TeamIconDark },
+        { text: Constants.PROGRESS, path: "/employee/progress", iconLight: ProgressIconLight, iconDark: ProgressIconDark },
+        { text: Constants.HISTORY, path: "/employee/history", iconLight: HistoryIconLight, iconDark: HistoryIconDark },
+        { text: Constants.SETTINGS, path: "/employee/settings", iconLight: SettingIconLight, iconDark: SettingIconDark }
+    ];
+
     return (
-        <div id={"side-navigation"} className={`${isDarkMode ? "dark-navigation" : "light-navigation"}`}>
-            <Header currentUser={currentUser} />
-            <div id={"side-navigation-links"}>
-                <NavigationButton icon={isDarkMode ? DashboardIconDark : DashboardIconLight} currentUser={currentUser} isSelected={selectedSection == Constants.DASHBOARD} text={Constants.DASHBOARD} setSelectedSection={setSelectedSection}/>
-                <NavigationButton icon={isDarkMode ? TaskIconDark : TaskIconLight} currentUser={currentUser} isSelected={selectedSection == Constants.TASKS} text={Constants.TASKS} setSelectedSection={setSelectedSection}/>
-                <NavigationButton icon={isDarkMode ? TeamIconDark : TeamIconLight} currentUser={currentUser} isSelected={selectedSection == Constants.TEAMS} text={Constants.TEAMS} setSelectedSection={setSelectedSection}/>
-                <NavigationButton icon={isDarkMode ? ProgressIconDark : ProgressIconLight} currentUser={currentUser} isSelected={selectedSection == Constants.PROGRESS} text={Constants.PROGRESS} setSelectedSection={setSelectedSection}/>
-                <NavigationButton icon={isDarkMode ? HistoryIconDark : HistoryIconLight} currentUser={currentUser} isSelected={selectedSection == Constants.HISTORY} text={Constants.HISTORY} setSelectedSection={setSelectedSection}/>
-                <NavigationButton icon={isDarkMode ? SettingIconDark : SettingIconLight} currentUser={currentUser} isSelected={selectedSection == Constants.SETTINGS} text={Constants.SETTINGS} setSelectedSection={setSelectedSection}/>
+        <div id="side-navigation" className={isDarkMode ? "dark-navigation" : "light-navigation"}>
+            <Header />
+            <div id="side-navigation-links">
+                {sections.map(section => (
+                    <NavigationButton
+                        key={section.text}
+                        icon={isDarkMode ? section.iconDark : section.iconLight}
+                        isSelected={location.pathname === section.path}
+                        text={section.text}
+                        path={section.path}
+                    />
+                ))}
             </div>
-            <Footer />
+            <Footer/>
         </div>
     )
 }

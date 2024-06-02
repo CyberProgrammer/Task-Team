@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from "react";
-import {EmployeeInterface} from "../../../../../../../interfaces";
 import PriorityOption from "./priority-option.tsx";
+import {useUser} from "../../contexts/user_context.tsx";
 
 interface PrioritySelectProps {
-    currentUser: EmployeeInterface
     taskPriority: string
 }
 const PrioritySelect : React.FC<PrioritySelectProps> = (
     {
-        currentUser,
-        taskPriority
+        taskPriority,
     }) => {
+
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode
 
     const [priorityClass, setPriorityClass] = useState(taskPriority);

@@ -2,17 +2,14 @@ import React from "react";
 
 import './upcoming-deadlines.css'
 
-import {EmployeeInterface} from "../../../../../interfaces";
 import DeadlineTable from "./table/deadline-table.tsx";
+import {useUser} from "../../../../../contexts/user_context.tsx";
 
 interface UpcomingDeadlineProps {
-    currentUser: EmployeeInterface
-}
-const UpcomingDeadline : React.FC<UpcomingDeadlineProps> = (
-    {
-        currentUser,
-    }) => {
 
+}
+const UpcomingDeadline : React.FC<UpcomingDeadlineProps> = ({}) => {
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode
 
     return(
@@ -20,7 +17,7 @@ const UpcomingDeadline : React.FC<UpcomingDeadlineProps> = (
             <div className={"header"}>
                 <h3>Upcoming deadlines</h3>
             </div>
-            <DeadlineTable currentUser={currentUser} />
+            <DeadlineTable />
         </div>
     )
 }

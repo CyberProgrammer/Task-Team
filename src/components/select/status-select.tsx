@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from "react";
-import {EmployeeInterface} from "../../../../../../../interfaces";
 import StatusOption from "./status-option.tsx";
+import {useUser} from "../../contexts/user_context.tsx";
 
 interface StatusSelectProps{
-    currentUser: EmployeeInterface
     taskStatus: string
 }
 const StatusSelect : React.FC<StatusSelectProps> = (
     {
-        currentUser,
         taskStatus
     }) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
+
     const [statusClass, setStatusClass] = useState(taskStatus);
     const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = event.target.value;

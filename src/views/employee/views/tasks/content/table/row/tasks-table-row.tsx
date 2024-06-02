@@ -1,39 +1,38 @@
 import React from "react";
-import {EmployeeInterface} from "../../../../../../../interfaces";
 import StatusSelect from "../../../../../../../components/select/status-select.tsx";
 import PrioritySelect from "../../../../../../../components/select/priority-select.tsx";
+import {useUser} from "../../../../../../../contexts/user_context.tsx";
 
-interface DeadlineTableRowProps {
-    currentUser: EmployeeInterface
-    taskTitle: string
-    taskAssignee: string
-    taskDueDate: string
+interface TasksTableRowProps {
+    title: string
+    assignee: string
+    dueDate: string
     taskStatus: string
     taskPriority: string
 }
-
-const DeadlineTableRow : React.FC<DeadlineTableRowProps> = (
+const TasksTableRow : React.FC<TasksTableRowProps> = (
     {
-        currentUser,
-        taskTitle,
-        taskAssignee,
-        taskDueDate,
+        title,
+        assignee,
+        dueDate,
         taskStatus,
         taskPriority
     }) => {
 
-    const isDarkMode = currentUser.settings.isDarkMode
+    const {currentUser} = useUser();
+    const isDarkMode = currentUser.settings.isDarkMode;
 
     return (
-        <div className={`deadline-table-row ${isDarkMode ? "deadline-table-row-dark" : "deadline-table-row-light"}`}>
+        <div
+            className={`tasks-table-row ${isDarkMode ? "tasks-table-row-dark" : "tasks-table-row-light"}`}>
             <div className={"col-1"}>
-                <p>{taskTitle}</p>
+                <p>{title}</p>
             </div>
             <div className={"col-2"}>
-                <p>{taskAssignee}</p>
+                <p>{assignee}</p>
             </div>
             <div className={"col-3"}>
-                <p>{taskDueDate}</p>
+                <p>{dueDate}</p>
             </div>
             <div className={"col-4"}>
                 <StatusSelect taskStatus={taskStatus}/>
@@ -45,4 +44,4 @@ const DeadlineTableRow : React.FC<DeadlineTableRowProps> = (
     )
 }
 
-export default DeadlineTableRow;
+export default TasksTableRow;

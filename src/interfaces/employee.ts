@@ -1,8 +1,16 @@
 export interface EmployeeInterface {
-    id: number;
-    fullName: string;
+    id: string;
+    first_name: string;
+    last_name: string;
     isAdmin: boolean;
     settings: SettingsInterface
+}
+
+export interface EmployeeListInterface {
+    id: string,
+    first_name: string;
+    last_name: string;
+    isAdmin: boolean;
 }
 
 interface SettingsInterface {

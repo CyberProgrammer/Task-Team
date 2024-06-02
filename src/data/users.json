@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ABGT235230",
+    "first_name": "John",
+    "last_name": "Doe",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT235230",
+    "first_name": "John",
+    "last_name": "Doe",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT235530",
+    "first_name": "John",
+    "last_name": "Toe",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT235230",
+    "first_name": "John",
+    "last_name": "Boe",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  }
+]
