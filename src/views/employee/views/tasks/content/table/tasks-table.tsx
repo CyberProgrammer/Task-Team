@@ -1,22 +1,25 @@
 import React from "react";
 
+import {useUser} from "../../../../../../contexts/user_context.tsx";
+import {useUsersList} from "../../../../../../contexts/users_list_context.tsx";
+
 import "./tasks-table.css"
 
-import {EmployeeListInterface, TasksInterface} from "../../../../../../interfaces";
+import {TasksInterface} from "../../../../../../interfaces";
 import TasksTableRow from "./row/tasks-table-row.tsx";
-import {useUser} from "../../../../../../contexts/user_context.tsx";
+
 
 interface TasksTableProps{
-    currentUsers: EmployeeListInterface[]
     currentTasks: TasksInterface[]
 }
 const TasksTable : React.FC<TasksTableProps> = (
     {
-        currentUsers,
         currentTasks,
     }) => {
 
     const {currentUser} = useUser();
+    const {currentUsers} = useUsersList();
+
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return(
@@ -45,15 +48,21 @@ const TasksTable : React.FC<TasksTableProps> = (
                     const foundAssignee = currentUsers.find(user => {
                         console.log(`Comparing task.assignee: ${task.assignee} with user.id: ${user.id}`);
                         return user.id === task.assignee;
-                    })?.fullName || "Unknown";
+                    })
 
+                    if(!foundAssignee){
+                        console.log("No Assignee found.");
+                        return null;
+                    }
+
+                    let fullName = foundAssignee.first_name + " " + foundAssignee.last_name;
                     console.log(`Found assignee for task "${task.title}": ${foundAssignee}`);
 
                     return (
                         <TasksTableRow
                             key={index}
                             title={task.title}
-                            assignee={foundAssignee}
+                            assignee={fullName}
                             dueDate={task.dueDate}
                             taskStatus={task.status}
                             taskPriority={task.priority}

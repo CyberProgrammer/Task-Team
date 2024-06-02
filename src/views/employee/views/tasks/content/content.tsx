@@ -1,36 +1,29 @@
 import React from "react";
 import useMenuHandlers from "../functions/handleMenus.tsx"
 
+import {useUser} from "../../../../../contexts/user_context.tsx";
+import {useTasks} from "../../../../../contexts/task_list_context.tsx";
+
 import '../employee-tasks.css'
 
-import {EmployeeListInterface, TasksInterface} from "../../../../../interfaces";
 import TasksToolbar from "./toolbar/tasks-toolbar.tsx";
 import TasksTable from "./table/tasks-table.tsx";
 import AddTaskMenu from "./menus/add-task-menu.tsx";
 import FilterMenu from "./menus/filter-menu.tsx";
 import SortMenu from "./menus/sort-menu.tsx";
-import {useUser} from "../../../../../contexts/user_context.tsx";
+import {UsersListProvider} from "../../../../../contexts/users_list_context.tsx";
+
 
 interface ContentProps{
-    currentUsers: EmployeeListInterface[]
-    currentTasks: TasksInterface[]
+
 }
-const Content : React.FC<ContentProps> = (
-    {
-        currentUsers,
-        currentTasks
-    }) => {
+const Content : React.FC<ContentProps> = ({}) => {
     const {currentUser} = useUser();
+    const {currentTasks} = useTasks();
+
     const isDarkMode = currentUser.settings.isDarkMode;
 
-    const {
-        filterMenuOpen,
-        sortMenuOpen,
-        addTaskMenuOpen,
-        toggleMenu
-    } = useMenuHandlers();
-
-
+    const {filterMenuOpen, sortMenuOpen, addTaskMenuOpen, toggleMenu} = useMenuHandlers();
 
     return(
         <div id={"employee-content"} className={isDarkMode ? "content-dark" : "content-light"}>
@@ -46,7 +39,9 @@ const Content : React.FC<ContentProps> = (
                 {addTaskMenuOpen ?
                     <AddTaskMenu toggleAddTaskMenu={() => toggleMenu('addTask')}/>
                     :
-                    <TasksTable currentUsers={currentUsers} currentTasks={currentTasks}/>
+                    <UsersListProvider>
+                        <TasksTable currentTasks={currentTasks}/>
+                    </UsersListProvider>
                 }
             </div>
         </div>

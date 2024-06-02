@@ -1,9 +1,6 @@
-import React, {useState, createContext, useContext} from 'react'
+import React, {useState} from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { Routes, Route} from 'react-router-dom';
-
-import { usersList, tasksList } from './data/constants.ts';
-import {EmployeeListInterface, TasksInterface} from './interfaces';
 import {useUser} from "./contexts/user_context.tsx";
 
 import "./app.css"
@@ -22,9 +19,6 @@ const App : React.FC = () => {
     const {isAuthenticated, error} = useAuth0()
     const [isAdmin] = useState(currentUser.isAdmin)
 
-    const [currentUsers, setCurrentUsers] = useState<EmployeeListInterface[]>(usersList)
-    const [currentTasks, setCurrentTasks] = useState<TasksInterface[]>(tasksList);
-
     // Handle authentication errors
     if (error) {
         return <div>Error: {error.message}</div>
@@ -40,11 +34,11 @@ const App : React.FC = () => {
                             <Route path="/home" element={<ManagerView currentUser={currentUser}/>}/>
                         ) : (
                             <>
-                                <Route path="/home" element={<EmployeeDashboard/>}/>
-                                <Route path="/employee/tasks" element={<EmployeeTasks currentUsers={currentUsers} currentTasks={currentTasks}/>}/>
-                                <Route path="/employee/teams" element={<EmployeeTeams currentUser={currentUser}/>}/>
-                                <Route path="/employee/progress" element={<EmployeeProgress currentUser={currentUser}/>}/>
-                                <Route path="/employee/history" element={<EmployeeHistory currentUser={currentUser}/>}/>
+                                <Route path="/home" element={<EmployeeDashboard />}/>
+                                <Route path="/employee/tasks" element={<EmployeeTasks />}/>
+                                <Route path="/employee/teams" element={<EmployeeTeams />}/>
+                                <Route path="/employee/progress" element={<EmployeeProgress />}/>
+                                <Route path="/employee/history" element={<EmployeeHistory />}/>
                                 <Route path="/employee/settings" element={<Settings/>}/>
                             </>
                         )

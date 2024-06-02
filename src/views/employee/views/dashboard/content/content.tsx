@@ -21,7 +21,7 @@ const Content : React.FC<ContentProps> = ({}) => {
             <div id={"employee-dashboard"}>
                 <div className={`toolbar ${isDarkMode ? "toolbar-dark" : "toolbar-light"}`}>
                     <div className={"toolbar-left"}>
-                        <h2>Welcome, {currentUser.fullName}</h2>
+                        <h2>Welcome, {currentUser.first_name}</h2>
                     </div>
                     <div className={"toolbar-right"}>
                         <SearchBar className={"search-bar"}/>

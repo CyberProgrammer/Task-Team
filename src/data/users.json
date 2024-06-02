@@ -1,31 +1,35 @@
 [
   {
-    "id": 1,
-    "fullName": "John Doe",
+    "id": "ABGT235230",
+    "first_name": "John",
+    "last_name": "Doe",
     "isAdmin": false,
     "settings": {
       "isDarkMode": true
     }
   },
   {
-    "id": 2,
-    "fullName": "Shan Su",
+    "id": "ABGT235230",
+    "first_name": "John",
+    "last_name": "Doe",
     "isAdmin": false,
     "settings": {
       "isDarkMode": true
     }
   },
   {
-    "id": 3,
-    "fullName": "Manuel He",
+    "id": "ABGT235530",
+    "first_name": "John",
+    "last_name": "Toe",
     "isAdmin": false,
     "settings": {
       "isDarkMode": true
     }
   },
   {
-    "id": 4,
-    "fullName": "Jianhua Nawaz",
+    "id": "ABGT235230",
+    "first_name": "John",
+    "last_name": "Boe",
     "isAdmin": false,
     "settings": {
       "isDarkMode": true

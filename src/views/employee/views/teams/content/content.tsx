@@ -1,14 +1,13 @@
 import React from "react";
-import {EmployeeInterface} from "../../../../../interfaces";
+import {useUser} from "../../../../../contexts/user_context.tsx";
 
 interface ContentProps{
-    currentUser: EmployeeInterface;
+
 }
 const Content : React.FC<ContentProps> = (
-    {
-        currentUser
-    }) => {
+    {}) => {
 
+    const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
     return(

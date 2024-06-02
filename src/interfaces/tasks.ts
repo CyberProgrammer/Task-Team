@@ -1,6 +1,6 @@
 export interface TasksInterface {
     title: string
-    assignee: number
+    assignee: string
     dueDate: string
     status: string
     priority: string

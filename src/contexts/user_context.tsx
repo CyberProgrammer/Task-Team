@@ -8,8 +8,9 @@ interface UserContextProps {
 }
 
 const  userTemplate: EmployeeInterface = {
-    id: -1,
-    fullName: "John Doe",
+    id: "ABC",
+    first_name: "John",
+    last_name: "Doe",
     isAdmin: false,
     settings: {
         isDarkMode: true,
@@ -20,7 +21,7 @@ const UserContext = createContext<UserContextProps | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [currentUser, setCurrentUser] = useState<EmployeeInterface>(userTemplate);
-    const { isAuthenticated, user } = useAuth0();
+    const { isAuthenticated, user,  } = useAuth0();
 
     useEffect(() => {
         if (isAuthenticated && user) {
@@ -29,8 +30,9 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             const { name, email} = user;
 
             setCurrentUser({
-                id: 1,
-                fullName: "John Doe",
+                id: "AB45230GDFG",
+                first_name: "Tyler",
+                last_name: "Doe",
                 isAdmin: false,
                 settings: {
                     isDarkMode: true,
