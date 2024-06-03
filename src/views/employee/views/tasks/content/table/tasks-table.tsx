@@ -7,6 +7,7 @@ import "./tasks-table.css"
 
 import {TasksInterface} from "../../../../../../interfaces";
 import TasksTableRow from "./row/tasks-table-row.tsx";
+import {convertToLocalTime, getDaysBetweenDates} from "../../../../../../utils/dateUtils.ts";
 
 
 interface TasksTableProps{
@@ -63,7 +64,7 @@ const TasksTable : React.FC<TasksTableProps> = (
                             key={index}
                             title={task.title}
                             assignee={fullName}
-                            dueDate={task.dueDate}
+                            dueDate={convertToLocalTime(task.dueDate)}
                             taskStatus={task.status}
                             taskPriority={task.priority}
                         />

@@ -22,14 +22,14 @@
 }
 
 #employee-dashboard .toolbar-left{
-    width: 75%;
+    width: 70%;
 }
 
 #employee-dashboard .toolbar-right{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 25%;
+    width: 30%;
 }
 
 /* Toolbar Icons */

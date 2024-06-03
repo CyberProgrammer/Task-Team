@@ -1,14 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import DeadlineTableRow from "./rows/deadline-table-row.tsx";
 import {useUser} from "../../../../../../contexts/user_context.tsx";
+import {useTasks} from "../../../../../../contexts/task_list_context.tsx";
+import {TasksInterface} from "../../../../../../interfaces";
+import {getDaysBetweenDates, convertToLocalTime} from "../../../../../../utils/dateUtils.ts";
 
 interface DeadlineTableProps {
 
 }
 const DeadlineTable : React.FC<DeadlineTableProps> = ({}) => {
     const {currentUser} = useUser();
+    const {currentTasks} = useTasks();
+    const isDarkMode = currentUser.settings.isDarkMode;
 
-    const isDarkMode = currentUser.settings.isDarkMode
+    const [upcomingTasks, setUpcomingTasks] = useState<TasksInterface[]>([]);
+
+    const currentISODate = new Date().toISOString();
+    useEffect(() => {
+        currentTasks.map((task , index) => {
+            if(getDaysBetweenDates(currentISODate, task.dueDate) <= 7 && getDaysBetweenDates(currentISODate, task.dueDate) >= 0){
+                setUpcomingTasks(prevState => [...prevState, task]);
+            }
+        })
+    }, []);
 
     return (
         <div id={"deadline-table"} className={isDarkMode ? "deadline-table-dark" : "deadline-table-light"}>
@@ -32,24 +46,9 @@ const DeadlineTable : React.FC<DeadlineTableProps> = ({}) => {
                 </ul>
             </div>
             <div className={"deadline-table-rows"}>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Netus massa luctus pulvinar."} taskAssignee={"Abdullah Wei"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nostra litora parturient accumsan elementum bibendum sociosqu."} taskAssignee={"Brian Raj"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"med"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Curabitur facilisi nascetur ornare."} taskAssignee={"Bibi Jean"} taskDueDate={"16th Oct"} taskStatus={"not-started"} taskPriority={"high"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Netus massa luctus pulvinar."} taskAssignee={"Abdullah Wei"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nostra litora parturient accumsan elementum bibendum sociosqu."} taskAssignee={"Brian Raj"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"med"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Curabitur facilisi nascetur ornare."} taskAssignee={"Bibi Jean"} taskDueDate={"16th Oct"} taskStatus={"not-started"} taskPriority={"high"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Sit sapien imperdiet feugiat feugiat nulla sapien."} taskAssignee={"Bernard Traore"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Nisl habitant sem et erat aptent."} taskAssignee={"Denis Ramirez"} taskDueDate={"16th Oct"} taskStatus={"done"} taskPriority={"low"}/>
-                <DeadlineTableRow currentUser={currentUser} taskTitle={"Habitasse eget per felis varius ultricies."} taskAssignee={"Vladimir Mai"} taskDueDate={"16th Oct"} taskStatus={"progress"} taskPriority={"low"}/>
+                {upcomingTasks.map((task, index) => (
+                    <DeadlineTableRow currentUser={currentUser} key={task.id} taskTitle={task.title} taskAssignee={task.assignee} taskDueDate={convertToLocalTime(task.dueDate)} taskStatus={task.status} taskPriority={task.priority}/>
+                ))}
             </div>
         </div>
     )

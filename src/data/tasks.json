@@ -1,22 +1,25 @@
 [
   {
+    "id": 1,
     "title": "Testing app",
     "assignee": "ABGT235230",
-    "dueDate": "Oct 19th",
+    "dueDate": "2024-06-07T14:30:00.000Z",
     "status": "done",
     "priority": "low"
   },
   {
+    "id": 2,
     "title": "Testing app 2",
     "assignee": "ABGT235530",
-    "dueDate": "Oct 19th",
+    "dueDate": "2024-06-11T14:30:00.000Z",
     "status": "not-started",
     "priority": "high"
   },
   {
+    "id": 3,
     "title": "Testing app 3",
     "assignee": "ABGT235530",
-    "dueDate": "Oct 19th",
+    "dueDate": "2024-06-09T14:30:00.000Z",
     "status": "progress",
     "priority": "med"
   }
