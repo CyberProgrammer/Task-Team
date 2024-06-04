@@ -17,7 +17,7 @@ const DeadlineTable : React.FC<DeadlineTableProps> = ({}) => {
 
     const currentISODate = new Date().toISOString();
     useEffect(() => {
-        currentTasks.map((task , index) => {
+        currentTasks.map((task ) => {
             if(getDaysBetweenDates(currentISODate, task.dueDate) <= 7 && getDaysBetweenDates(currentISODate, task.dueDate) >= 0){
                 setUpcomingTasks(prevState => [...prevState, task]);
             }

@@ -1,26 +1,26 @@
 import React from "react";
-import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import Navigation from "../../navigation/navigation.tsx";
 
 import Content from "./content/content.tsx";
 
-import '../../employee-view.css'
+import '../../main-view.css'
 import {TaskProvider} from "../../../../contexts/task_list_context.tsx";
 
 interface EmployeeTasksProps{
 
 }
-const EmployeeTasks : React.FC<EmployeeTasksProps> = (
+const TasksView : React.FC<EmployeeTasksProps> = (
     {
     }) => {
 
     return (
         <div id={"employee-container"}>
             <TaskProvider>
-                <EmployeeNavigation />
+                <Navigation />
                 <Content />
             </TaskProvider>
         </div>
     )
 }
 
-export default EmployeeTasks;
+export default TasksView;

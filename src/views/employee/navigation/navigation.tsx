@@ -1,6 +1,6 @@
 import React from "react";
 
-import './employee-navigation.css'
+import './navigation.css'
 import {Constants} from "../utils/constants.ts"
 
 import Header from "./header/header.tsx"
@@ -28,7 +28,7 @@ interface EmployeeNavigationProps {
 
 }
 
-const EmployeeNavigation : React.FC<EmployeeNavigationProps> = ({}) => {
+const Navigation : React.FC<EmployeeNavigationProps> = ({}) => {
     const {currentUser} = useUser()
 
     const location = useLocation();
@@ -36,11 +36,11 @@ const EmployeeNavigation : React.FC<EmployeeNavigationProps> = ({}) => {
 
     const sections = [
         { text: Constants.DASHBOARD, path: "/home", iconLight: DashboardIconLight, iconDark: DashboardIconDark },
-        { text: Constants.TASKS, path: "/employee/tasks", iconLight: TaskIconLight, iconDark: TaskIconDark },
-        { text: Constants.TEAMS, path: "/employee/teams", iconLight: TeamIconLight, iconDark: TeamIconDark },
-        { text: Constants.PROGRESS, path: "/employee/progress", iconLight: ProgressIconLight, iconDark: ProgressIconDark },
-        { text: Constants.HISTORY, path: "/employee/history", iconLight: HistoryIconLight, iconDark: HistoryIconDark },
-        { text: Constants.SETTINGS, path: "/employee/settings", iconLight: SettingIconLight, iconDark: SettingIconDark }
+        { text: Constants.TASKS, path: "/tasks", iconLight: TaskIconLight, iconDark: TaskIconDark },
+        { text: Constants.TEAMS, path: "/teams", iconLight: TeamIconLight, iconDark: TeamIconDark },
+        { text: Constants.PROGRESS, path: "/progress", iconLight: ProgressIconLight, iconDark: ProgressIconDark },
+        { text: Constants.HISTORY, path: "/history", iconLight: HistoryIconLight, iconDark: HistoryIconDark },
+        { text: Constants.SETTINGS, path: "/settings", iconLight: SettingIconLight, iconDark: SettingIconDark }
     ];
 
     return (
@@ -62,4 +62,4 @@ const EmployeeNavigation : React.FC<EmployeeNavigationProps> = ({}) => {
     )
 }
 
-export default EmployeeNavigation;
+export default Navigation;

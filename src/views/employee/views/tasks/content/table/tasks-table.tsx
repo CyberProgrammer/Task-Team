@@ -7,7 +7,7 @@ import "./tasks-table.css"
 
 import {TasksInterface} from "../../../../../../interfaces";
 import TasksTableRow from "./row/tasks-table-row.tsx";
-import {convertToLocalTime, getDaysBetweenDates} from "../../../../../../utils/dateUtils.ts";
+import {convertToLocalTime} from "../../../../../../utils/dateUtils.ts";
 
 
 interface TasksTableProps{

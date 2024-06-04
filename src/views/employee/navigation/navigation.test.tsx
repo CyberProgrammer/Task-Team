@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
-import EmployeeNavigation from './employee-navigation';
+import Navigation from './navigation.tsx';
 import {Constants} from "../utils/constants.ts";
 
 describe('EmployeeNavigation', () => {
@@ -9,7 +9,7 @@ describe('EmployeeNavigation', () => {
         const setSelectedSectionMock = jest.fn();
 
         render(
-            <EmployeeNavigation
+            <Navigation
                 selectedSection={"Test"}
                 setSelectedSection={setSelectedSectionMock}
             />);

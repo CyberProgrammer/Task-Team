@@ -1,17 +1,17 @@
 import React from "react";
-import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import Navigation from "../../navigation/navigation.tsx";
 import Content from "./content/content.tsx"
 interface EmployeeHistoryProps{
 
 }
-const EmployeeHistory : React.FC<EmployeeHistoryProps> = ({}) => {
+const HistoryView : React.FC<EmployeeHistoryProps> = ({}) => {
 
     return (
         <div id={"employee-container"}>
-            <EmployeeNavigation />
+            <Navigation />
             <Content />
         </div>
     )
 }
 
-export default EmployeeHistory;
+export default HistoryView;

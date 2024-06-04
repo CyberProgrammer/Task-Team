@@ -4,7 +4,7 @@ import useMenuHandlers from "../functions/handleMenus.tsx"
 import {useUser} from "../../../../../contexts/user_context.tsx";
 import {useTasks} from "../../../../../contexts/task_list_context.tsx";
 
-import '../employee-tasks.css'
+import '../tasks-view.css'
 
 import TasksToolbar from "./toolbar/tasks-toolbar.tsx";
 import TasksTable from "./table/tasks-table.tsx";

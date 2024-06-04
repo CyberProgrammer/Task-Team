@@ -1,22 +1,22 @@
 import React from "react";
 
-import './employee-dashboard.css'
-import '../../employee-view.css'
+import './dashboard-view.css'
+import '../../main-view.css'
 
 // @ts-ignore
 import NotificationReadIconLight from '../../../../../assets/icons/light_mode/notification_read.svg';
-import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import Navigation from "../../navigation/navigation.tsx";
 import Content from "./content/content.tsx";
 import {TaskProvider} from "../../../../contexts/task_list_context.tsx";
 
 interface EmployeeDashboardProps {
 
 }
-const EmployeeDashboard : React.FC<EmployeeDashboardProps> = ({}) => {
+const DashboardView : React.FC<EmployeeDashboardProps> = ({}) => {
 
     return (
         <div id={"employee-container"}>
-            <EmployeeNavigation />
+            <Navigation />
             <TaskProvider>
                 <Content />
             </TaskProvider>
@@ -24,4 +24,4 @@ const EmployeeDashboard : React.FC<EmployeeDashboardProps> = ({}) => {
     )
 }
 
-export default EmployeeDashboard;
+export default DashboardView;

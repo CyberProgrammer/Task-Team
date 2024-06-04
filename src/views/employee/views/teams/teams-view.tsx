@@ -1,19 +1,21 @@
 import React from "react";
-import EmployeeNavigation from "../../navigation/employee-navigation.tsx";
+import Navigation from "../../navigation/navigation.tsx";
+
+import './teams-view.css'
 
 import Content from "./content/content.tsx"
 
 interface EmployeeTeamsProps{
 
 }
-const EmployeeTeams : React.FC<EmployeeTeamsProps> = ({}) => {
+const TeamsView : React.FC<EmployeeTeamsProps> = ({}) => {
 
     return (
         <div id={"employee-container"}>
-            <EmployeeNavigation />
+            <Navigation />
             <Content />
         </div>
     )
 }
 
-export default EmployeeTeams;
+export default TeamsView;
