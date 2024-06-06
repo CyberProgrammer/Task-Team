@@ -1,0 +1,45 @@
+.teams-overview-analytics{
+    height: 200px;
+    width: 100%;
+}
+
+.teams-analytics-container{
+    display: flex;
+    flex-direction: row;
+    height: 95%;
+    width: 95%;
+    margin: auto;
+}
+
+.teams-analytics-dark{
+    color: white;
+    background-color: var(--background-color-dark-secondary);
+}
+
+.teams-analytics-light{
+    color: #111111;
+    background-color: var(--background-color-light-alternate);
+}
+
+
+/* Team member row details */
+.team-member-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.team-members-row{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.team-member-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+

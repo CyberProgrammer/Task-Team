@@ -1,0 +1,30 @@
+.analytics-card{
+    width: 25%;
+    margin: 1%;
+}
+
+.analytics-card-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.analytics-card-dark{
+    color: white;
+    background-color: var(--background-color-dark-alternate);
+}
+
+.analytics-card-light{
+    color: #111111;
+    background-color: var(--background-color-light-alternate);
+}
+
+.analytics-card-title{
+    padding-top: 5%;
+}
+
+.analytics-card-data{
+    padding-top: 15%;
+}

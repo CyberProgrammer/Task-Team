@@ -2,12 +2,16 @@ import React from "react";
 import {useUser} from "../../../../../contexts/user_context.tsx";
 import TeamsOverview from "./overview/teams-overview.tsx";
 import TeamDetails from "./team_details/team-details.tsx";
+import {useTeams} from "../../../../../contexts/team.tsx";
+import {useTeamMembers} from "../../../../../contexts/team-members.tsx";
 
 interface ContentProps{
 
 }
-const Content : React.FC<ContentProps> = (
-    {}) => {
+const Content : React.FC<ContentProps> = ({}) => {
+    /* Test data */
+    const {teams} = useTeams();
+    const {teamMembers} = useTeamMembers();
 
     const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
@@ -25,8 +29,9 @@ const Content : React.FC<ContentProps> = (
                     <div className="teams-header-left">
                         <select name="team-select" id="team-select" className={isDarkMode ? "team-select-dark" : "team-select-light"} onChange={handleSelectViewChange}>
                             <option value={"overview"}>Overview</option>
-                            <option value={"team1"}>Team 1</option>
-                            <option value={"team2"}>Team 2</option>
+                            { teams.map((entry) => (
+                                <option value={`team${entry.id}`}>{entry.team_name}</option>
+                            ))}
                         </select>
                     </div>
                 </div>
@@ -34,7 +39,7 @@ const Content : React.FC<ContentProps> = (
                     { teamView === "overview" ?
                         <TeamsOverview />
                         :
-                        <TeamDetails />
+                        <TeamDetails TeamData={teams.find((entry) => teamView == `team${entry.id}`)!} TeamMembers={teamMembers.filter((entry) => teamView == `team${entry.team_id}`)}/>
                     }
                 </div>
             </div>

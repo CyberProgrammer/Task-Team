@@ -1,10 +1,22 @@
 import React from 'react'
+import {TeamInterface, TeamMemberInterface} from "../../../../../../interfaces";
+import Analytics from "../../analytics/analytics.tsx";
+import TeamTable from "./table/team-table.tsx";
 
-const TeamDetails : React.FC = () => {
+interface TeamDetailProps {
+    TeamData: TeamInterface,
+    TeamMembers: TeamMemberInterface[],
+}
+const TeamDetails : React.FC<TeamDetailProps> = (
+    {
+        TeamData,
+        TeamMembers,
+    }) => {
 
     return(
         <div className="teams-details">
-            <h1>Team details</h1>
+            <Analytics />
+            <TeamTable TeamData={TeamData} TeamMembers={TeamMembers} />
         </div>
     )
 }
