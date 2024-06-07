@@ -1,11 +1,11 @@
 [
   {
-    "id": "ABC",
+    "id": "auth0|665cf1aa4c131177be6692de",
     "first_name": "Tyler",
     "last_name": "Serpa",
     "isAdmin": false,
     "settings": {
-      "isDarkMode": true
+      "isDarkMode": false
     }
   },
   {

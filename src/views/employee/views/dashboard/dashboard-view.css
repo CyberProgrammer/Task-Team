@@ -18,7 +18,7 @@
 
 .toolbar-light{
     color: #111111;
-    background-color: var(--background-color-light-secondary);
+    background-color: var(--background-color-light-primary);
 }
 
 #employee-dashboard .toolbar-left{

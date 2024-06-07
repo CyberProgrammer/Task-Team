@@ -20,21 +20,18 @@
 
 .toolbar-container-left{
     display: flex;
-    justify-content: center;
-    width: 20%;
-}
-
-.toolbar-container-center{
-    display: flex;
-    justify-content: center;
-    width: 55%;
+    justify-content: start;
+    align-content: center;
+    width: 25%;
+    margin-left: 2%;
 }
 
 .toolbar-container-right{
     display: flex;
-    justify-items: center;
-    width: 25%;
-    padding-right: 5%;
+    justify-content: end;
+    align-items: center;
+    width: 75%;
+    margin-right: 2%;
 }
 
 .toolbar-container{
@@ -51,7 +48,7 @@
     border: transparent;
     border-radius: 5px;
     margin: 0 5px 0 5px;
-    height: 40px;
+    height: 35px;
     width: 125px;
 }
 
@@ -64,9 +61,14 @@
     background-color: var(--background-color-dark-alternate);
 }
 
+.toolbar-button-light{
+    color: #111111;
+    background-color: var(--background-color-light-secondary);
+}
+
 .tasks-toolbar-light{
     color: #111111;
-    background-color: var(--background-color-light-alternate);
+    background-color: var(--background-color-light-primary);
 }
 
 .toolbar-button-icon{

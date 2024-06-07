@@ -34,10 +34,8 @@ const TasksToolbar : React.FC<TasksToolbarProps> = (
                         <h4 className={"toolbar-button-text"}>Add Task</h4>
                     </button>
                 </div>
-                <div className={"toolbar-container-center"}>
-                    <SearchBar className={"tasks-table-search"}/>
-                </div>
                 <div className={"toolbar-container-right"}>
+                    <SearchBar className={"tasks-table-search"}/>
                     <button onClick={handleOpenFilterMenu} className={`toolbar-button ${isDarkMode ? "toolbar-button-dark" : "toolbar-button-light"}`}>
                         <img className={"toolbar-button-icon"} src={isDarkMode ? FilterIconDark : FilterIconLight}
                              alt="Add icon"/>

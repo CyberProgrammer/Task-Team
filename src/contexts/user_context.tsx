@@ -2,6 +2,7 @@
 import React, {createContext, useContext, ReactNode, useEffect, useState} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { EmployeeInterface } from '../interfaces';
+import {usersList} from "../data/constants.ts"
 
 interface UserContextProps {
     currentUser: EmployeeInterface;
@@ -28,16 +29,9 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             // User means nothing right now, modify when I implement backend
             // @ts-ignore
             const { name, email} = user;
+            console.log("User:", user);
 
-            setCurrentUser({
-                id: "AB45230GDFG",
-                first_name: "Tyler",
-                last_name: "Doe",
-                isAdmin: false,
-                settings: {
-                    isDarkMode: true,
-                },
-            });
+            setCurrentUser(usersList.find((User) => User.id === user.sub)!);
         }
     }, [isAuthenticated, user]);
 

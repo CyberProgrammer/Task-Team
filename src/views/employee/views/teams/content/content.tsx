@@ -1,14 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import {useUser} from "../../../../../contexts/user_context.tsx";
 import TeamsOverview from "./overview/teams-overview.tsx";
 import TeamDetails from "./team_details/team-details.tsx";
 import {useTeams} from "../../../../../contexts/team.tsx";
 import {useTeamMembers} from "../../../../../contexts/team-members.tsx";
-
-interface ContentProps{
-
-}
-const Content : React.FC<ContentProps> = ({}) => {
+import {TeamMemberInterface} from "../../../../../interfaces";
+const Content : React.FC = ({}) => {
     /* Test data */
     const {teams} = useTeams();
     const {teamMembers} = useTeamMembers();
@@ -16,30 +13,38 @@ const Content : React.FC<ContentProps> = ({}) => {
     const {currentUser} = useUser();
     const isDarkMode = currentUser.settings.isDarkMode;
 
-    const [teamView, setTeamView] = React.useState<string>("overview");
-
+    // Selected team from team-select
+    const [selectedTeamID, setTeamID] = React.useState<number>(-1);
     const handleSelectViewChange = (event : React.ChangeEvent<HTMLSelectElement>) => {
-        setTeamView(event.target.value);
+        setTeamID(parseInt(event.currentTarget.value));
+        console.log("Select ID: ",parseInt(event.currentTarget.value));
     }
+
+    // Gets all teams the user is a member of
+    const [currentUserTeams] = useState<TeamMemberInterface[]>(
+        teamMembers.filter((member) => member.user_id == currentUser.id)
+    );
 
     return(
         <div id={"employee-content"} className={isDarkMode ? "content-dark" : "content-light"}>
             <div id={"employee-teams"}>
-                <div className="teams-header">
+                <div className={`teams-header ${isDarkMode ? "teams-header-dark" : "teams-header-light"}`}>
                     <div className="teams-header-left">
                         <select name="team-select" id="team-select" className={isDarkMode ? "team-select-dark" : "team-select-light"} onChange={handleSelectViewChange}>
-                            <option value={"overview"}>Overview</option>
-                            { teams.map((entry) => (
-                                <option value={`team${entry.id}`}>{entry.team_name}</option>
-                            ))}
+                            <option value={-1}>Overview</option>
+                            {teams
+                                .filter((team) => teamMembers.filter((member) => member.user_id === currentUser.id && team.id == member.team_id))
+                                .map(team => (
+                                    <option key={team.id} value={team.id}>{team.team_name}</option>
+                                ))}
                         </select>
                     </div>
                 </div>
                 <div id={"teams-container"}>
-                    { teamView === "overview" ?
-                        <TeamsOverview />
+                    { selectedTeamID === -1 ?
+                        <TeamsOverview currentUserTeams={currentUserTeams}/>
                         :
-                        <TeamDetails TeamData={teams.find((entry) => teamView == `team${entry.id}`)!} TeamMembers={teamMembers.filter((entry) => teamView == `team${entry.team_id}`)}/>
+                        <TeamDetails teamID={selectedTeamID}/>
                     }
                 </div>
             </div>

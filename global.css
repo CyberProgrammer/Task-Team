@@ -59,8 +59,8 @@ h1, h2, h3, h3, h4, h5, h6{
     --background-color-dark-primary: #16141C;
     --background-color-dark-secondary: #0F0E14;
     --background-color-dark-alternate: #24212B;
-    --background-color-light-primary: #91959D;
-    --background-color-light-secondary: #74777e;
-    --background-color-light-alternate: #a7aab1;
+    --background-color-light-primary: #F1F2F4;
+    --background-color-light-secondary: #D3D6DB;
+    --background-color-light-alternate: #F1F2F4;
     --border-color: rgba(100, 100, 100, 0.5);
 }

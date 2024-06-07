@@ -1,0 +1,52 @@
+/* Team member row details */
+#team-members-table{
+    width: 95%;
+    margin: 2% auto 2% auto;
+    border-radius: 5px;
+    padding: 0 0 2% 0;
+}
+
+.team-member-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2% 0 2% 0;
+    border-bottom: 1px solid var(--background-color-dark-secondary);
+}
+
+.team-member-header-dark{
+    color: white;
+    background-color: var(--background-color-dark-alternate);
+}
+
+.team-member-header-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}
+
+.team-members-row{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.team-member-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    padding: 1% 0 1% 0;
+    border-bottom: 1px solid var(--background-color-dark-secondary);
+}
+
+.team-members-table-dark{
+    color: white;
+    background-color: var(--background-color-dark-alternate);
+}
+
+.team-members-table-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}

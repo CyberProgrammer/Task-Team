@@ -2,6 +2,7 @@ import React from "react";
 import {EmployeeInterface} from "../../../../../../../interfaces";
 import StatusSelect from "../../../../../../../components/select/status-select.tsx";
 import PrioritySelect from "../../../../../../../components/select/priority-select.tsx";
+import {useUsersList} from "../../../../../../../contexts/users_list_context.tsx";
 
 interface DeadlineTableRowProps {
     currentUser: EmployeeInterface
@@ -23,6 +24,8 @@ const DeadlineTableRow : React.FC<DeadlineTableRowProps> = (
     }) => {
 
     const isDarkMode = currentUser.settings.isDarkMode
+    const {currentUsers} = useUsersList();
+    const foundUser = currentUsers.find((user) => user.id === taskAssignee);
 
     return (
         <div className={`deadline-table-row ${isDarkMode ? "deadline-table-row-dark" : "deadline-table-row-light"}`}>
@@ -30,7 +33,7 @@ const DeadlineTableRow : React.FC<DeadlineTableRowProps> = (
                 <p>{taskTitle}</p>
             </div>
             <div className={"col-2"}>
-                <p>{taskAssignee}</p>
+                <p>{foundUser ? (foundUser.first_name + " " + foundUser.last_name) : "Unknown" }</p>
             </div>
             <div className={"col-3"}>
                 <p>{taskDueDate}</p>

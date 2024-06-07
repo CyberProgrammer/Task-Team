@@ -18,7 +18,7 @@
 
 .analytics-card-light{
     color: #111111;
-    background-color: var(--background-color-light-alternate);
+    background-color: var(--background-color-light-primary);
 }
 
 .analytics-card-title{

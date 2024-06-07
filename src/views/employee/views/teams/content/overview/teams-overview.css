@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: row;
     height: 95%;
-    width: 95%;
+    width: 97%;
     margin: auto;
 }
 
@@ -18,28 +18,7 @@
 
 .teams-analytics-light{
     color: #111111;
-    background-color: var(--background-color-light-alternate);
+    background-color: var(--background-color-light-secondary);
 }
-
-
-/* Team member row details */
-.team-member-header{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.team-members-row{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.team-member-row{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
 
 

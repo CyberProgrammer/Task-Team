@@ -4,6 +4,7 @@ import {useUser} from "../../../../../../contexts/user_context.tsx";
 import {useTasks} from "../../../../../../contexts/task_list_context.tsx";
 import {TasksInterface} from "../../../../../../interfaces";
 import {getDaysBetweenDates, convertToLocalTime} from "../../../../../../utils/dateUtils.ts";
+import {UsersListProvider} from "../../../../../../contexts/users_list_context.tsx";
 
 interface DeadlineTableProps {
 
@@ -47,7 +48,9 @@ const DeadlineTable : React.FC<DeadlineTableProps> = ({}) => {
             </div>
             <div className={"deadline-table-rows"}>
                 {upcomingTasks.map((task, index) => (
-                    <DeadlineTableRow currentUser={currentUser} key={task.id} taskTitle={task.title} taskAssignee={task.assignee} taskDueDate={convertToLocalTime(task.dueDate)} taskStatus={task.status} taskPriority={task.priority}/>
+                    <UsersListProvider>
+                        <DeadlineTableRow currentUser={currentUser} key={task.id} taskTitle={task.title} taskAssignee={task.assignee} taskDueDate={convertToLocalTime(task.dueDate)} taskStatus={task.status} taskPriority={task.priority}/>
+                    </UsersListProvider>
                 ))}
             </div>
         </div>

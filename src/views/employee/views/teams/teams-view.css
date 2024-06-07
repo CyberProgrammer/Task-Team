@@ -1,15 +1,25 @@
-
 .teams-header{
     display: flex;
     flex-direction: row;
+    justify-content: start;
     align-items: center;
     height: 60px;
+    width: 100%;
+}
+
+.teams-header-dark{
+    color: white;
     background-color: var(--background-color-dark-secondary);
 }
 
+.teams-header-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}
+
 .teams-header-left{
-    width: 50%;
-    margin-left: 5%;
+    width: 20%;
+    margin-left: 2.5%;
 }
 
 #team-select{
@@ -25,5 +35,6 @@
 
 .team-select-light{
     color: #111111;
-    background-color: var(--background-color-light-primary);
+    background-color: var(--background-color-light-secondary);
 }
+

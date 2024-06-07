@@ -1,0 +1,38 @@
+#team-table{
+    width: 95%;
+    margin: 2% auto 2% auto;
+    border-radius: 5px;
+    padding: 0 0 2% 0;
+}
+
+.team-table-dark{
+    color: white;
+    background-color: var(--background-color-dark-alternate);
+}
+
+.team-table-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}
+
+#team-table-header{
+    text-align: center;
+}
+
+.team-table-header{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 0 2% 0;
+    border-bottom: 1px solid var(--background-color-dark-secondary);
+}
+
+.team-table-row{
+    padding: 1% 0 1% 0;
+    border-bottom: 1px solid var(--background-color-dark-secondary);
+}
+
+.team-table-row-list{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}

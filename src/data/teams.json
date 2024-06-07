@@ -2,13 +2,13 @@
   {
     "id": 1,
     "team_name": "Team 1",
-    "creator": "ABC",
+    "creator": "auth0|665cf1aa4c131177be6692de",
     "created_on": "2024-06-11T14:30:00.000Z"
   },
   {
     "id": 2,
     "team_name": "Team 2",
-    "creator": "ABC",
+    "creator": "auth0|665cf1aa4c131177be6692de",
     "created_on": "2024-06-11T14:30:00.000Z"
   }
 ]
