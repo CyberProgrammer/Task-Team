@@ -2,23 +2,18 @@ import React from "react";
 import {useUser} from "../../../../../../../../contexts/user_context.tsx";
 import './team-table.css'
 import {useTeams} from "../../../../../../../../contexts/team.tsx";
-import {TeamMemberInterface} from "../../../../../../../../interfaces";
 import {useTeamMembers} from "../../../../../../../../contexts/team-members.tsx";
 
 interface TeamTableProps {
-    currentUserTeams: TeamMemberInterface[];
+
 }
-const TeamsTable : React.FC<TeamTableProps> = (
-    {
-        currentUserTeams,
-    }) => {
+const TeamsTable : React.FC<TeamTableProps> = ({}) => {
 
     const {currentUser} = useUser();
     const {teams} = useTeams();
     const {teamMembers} = useTeamMembers();
 
-
-    console.log("currentUserTeams: ", currentUserTeams);
+    const currentUserTeams = teamMembers.filter((member) => member.user_id === currentUser.id);
 
     return(
         <div id={"team-table"} className={currentUser.settings.isDarkMode ? "team-table-dark" : "team-table-light"}>

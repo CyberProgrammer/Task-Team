@@ -29,7 +29,6 @@ const App : React.FC = () => {
                             <Route path="/home" element={<DashboardView />}/>
                             <Route path="/tasks" element={<TasksView />}/>
                             <Route path="/teams" element={<TeamsView />}/>
-                            <Route path="/progress" element={<ProgressView />}/>
                             <Route path="/history" element={<HistoryView />}/>
                             <Route path="/settings" element={<Settings/>}/>
                         </>) : null}

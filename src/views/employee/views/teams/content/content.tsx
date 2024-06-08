@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import {useUser} from "../../../../../contexts/user_context.tsx";
 import TeamsOverview from "./overview/teams-overview.tsx";
 import TeamDetails from "./team_details/team-details.tsx";
 import {useTeams} from "../../../../../contexts/team.tsx";
 import {useTeamMembers} from "../../../../../contexts/team-members.tsx";
-import {TeamMemberInterface} from "../../../../../interfaces";
 const Content : React.FC = ({}) => {
     /* Test data */
     const {teams} = useTeams();
@@ -19,11 +18,6 @@ const Content : React.FC = ({}) => {
         setTeamID(parseInt(event.currentTarget.value));
         console.log("Select ID: ",parseInt(event.currentTarget.value));
     }
-
-    // Gets all teams the user is a member of
-    const [currentUserTeams] = useState<TeamMemberInterface[]>(
-        teamMembers.filter((member) => member.user_id == currentUser.id)
-    );
 
     return(
         <div id={"employee-content"} className={isDarkMode ? "content-dark" : "content-light"}>
@@ -42,7 +36,7 @@ const Content : React.FC = ({}) => {
                 </div>
                 <div id={"teams-container"}>
                     { selectedTeamID === -1 ?
-                        <TeamsOverview currentUserTeams={currentUserTeams}/>
+                        <TeamsOverview />
                         :
                         <TeamDetails teamID={selectedTeamID}/>
                     }

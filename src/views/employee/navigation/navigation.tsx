@@ -14,8 +14,6 @@ import TaskIconLight from "../../../../assets/icons/light_mode/tasks.svg"
 import TaskIconDark from "../../../../assets/icons/dark_mode/tasks.svg"
 import TeamIconLight from "../../../../assets/icons/light_mode/group.svg"
 import TeamIconDark from "../../../../assets/icons/dark_mode/group.svg"
-import ProgressIconLight from "../../../../assets/icons/light_mode/progress.svg"
-import ProgressIconDark from "../../../../assets/icons/dark_mode/progress.svg"
 import HistoryIconLight from "../../../../assets/icons/light_mode/history.svg"
 import HistoryIconDark from "../../../../assets/icons/dark_mode/history.svg"
 import SettingIconLight from "../../../../assets/icons/light_mode/setting.svg"
@@ -38,7 +36,6 @@ const Navigation : React.FC<EmployeeNavigationProps> = ({}) => {
         { text: Constants.DASHBOARD, path: "/home", iconLight: DashboardIconLight, iconDark: DashboardIconDark },
         { text: Constants.TASKS, path: "/tasks", iconLight: TaskIconLight, iconDark: TaskIconDark },
         { text: Constants.TEAMS, path: "/teams", iconLight: TeamIconLight, iconDark: TeamIconDark },
-        { text: Constants.PROGRESS, path: "/progress", iconLight: ProgressIconLight, iconDark: ProgressIconDark },
         { text: Constants.HISTORY, path: "/history", iconLight: HistoryIconLight, iconDark: HistoryIconDark },
         { text: Constants.SETTINGS, path: "/settings", iconLight: SettingIconLight, iconDark: SettingIconDark }
     ];

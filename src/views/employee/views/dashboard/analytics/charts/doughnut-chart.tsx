@@ -4,7 +4,16 @@ import {Doughnut} from "react-chartjs-2";
 
 Chart.register(ArcElement, Tooltip);
 
-const DoughnutChart : React.FC = () => {
+interface ChartData {
+    tasksCompletedCount: number
+    tasksInProgressCount: number
+}
+
+const DoughnutChart : React.FC<ChartData> = (
+    {
+        tasksCompletedCount,
+        tasksInProgressCount
+    }) => {
     const data = {
         labels: [
             'Completed',
@@ -12,7 +21,7 @@ const DoughnutChart : React.FC = () => {
         ],
         datasets: [
             {
-                data: [5, 10],
+                data: [tasksCompletedCount, tasksInProgressCount],
                 // you can set individual colors for each bar
                 backgroundColor: [
                     '#0F4F31',
