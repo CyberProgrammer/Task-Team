@@ -1,0 +1,113 @@
+#tasks-table {
+    width: 96%;
+    max-height: 90vh;
+    border-radius: 10px;
+    margin: 2% auto 2% auto;
+    padding: 0 0 2% 0;
+}
+
+.tasks-table-dark{
+    color: white;
+    background-color: var(--background-color-dark-secondary);
+}
+
+.tasks-table-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}
+
+.tasks-table-head{
+    padding: 2% 0 2% 0;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid var(--background-color-dark-secondary);
+}
+
+.tasks-table-head-dark{
+    color: white;
+    background-color: var(--background-color-dark-secondary);
+}
+
+.tasks-table-head-light{
+    color: #111111;
+    background-color: var(--background-color-light-primary);
+}
+
+.tasks-table-head ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tasks-table-rows{
+    max-height: 80vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.tasks-table-row{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    border-bottom: 1px solid var(--background-color-dark-secondary);
+}
+
+.tasks-table-row-dark{
+    color: white;
+    background-color: var(--background-color-dark-alternate);
+}
+
+.tasks-table-row-light{
+    color: #111111;
+    background-color: var(--background-color-light-alternate);
+}
+
+.tasks-table-search{
+    border: none;
+    border-radius: 5px;
+    padding: 0 2% 0 2%;
+    width: 300px;
+    height: 35px;
+}
+
+/* Table columns */
+.col-1{
+    display: flex;
+    align-items: center;
+    min-width: 40%;
+    max-width: 40%;
+    margin-left: 1%;
+}
+
+.col-2{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.col-3{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.col-4{
+    display: flex;
+    align-items: center;
+    width: 15%;
+    padding-right: 15px;
+}
+
+.col-5{
+    display: flex;
+    align-items: center;
+    width: 15%;
+    padding-right: 15px;
+}
+
+.col-6{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    padding-right: 15px;
+}

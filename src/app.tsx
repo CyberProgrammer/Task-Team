@@ -8,7 +8,6 @@ import Index from "./views/index"
 import TasksView from "./views/employee/views/tasks/tasks-view.tsx";
 import TeamsView from "./views/employee/views/teams/teams-view.tsx";
 import HistoryView from "./views/employee/views/history/history-view.tsx";
-import ProgressView from "./views/employee/views/progress/progress-view.tsx";
 import Settings from "./views/employee/views/settings/settings.tsx";
 import DashboardView from "./views/employee/views/dashboard/dashboard-view.tsx";
 const App : React.FC = () => {
