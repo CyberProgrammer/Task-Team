@@ -1,10 +1,5 @@
-export interface ArchivedTasksInterface {
-    id: number
-    title: string
-    assignee: string
-    assigned_to: string
-    dueDate: string
+import {TasksInterface} from "./tasks.ts";
+
+export interface ArchivedTasksInterface extends TasksInterface {
     archived_on: string
-    status: string
-    priority: string
 }
