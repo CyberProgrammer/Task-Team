@@ -30,13 +30,17 @@ h1, h2, h3, h3, h4, h5, h6{
     height: 100vh;
     max-width: 1920px;
     background-color: #e5e5e5;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 /* Button Global Styles */
+button:hover{
+    cursor: pointer;
+}
 .primaryButton{
     width: 100px;
-    height: 25px;
+    height: 35px;
+    border-radius: 5px;
 }
 
 .primaryControlButton{

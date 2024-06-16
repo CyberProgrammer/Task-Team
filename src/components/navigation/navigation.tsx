@@ -4,6 +4,7 @@ import './navigation.css'
 
 import CompanyLogo from "../../../assets/logos/LogoWide.svg"
 import LoginButton from "../buttons/LoginButton.tsx"
+import DemoButton from "../buttons/DemoButton.tsx";
 
 const Navigation : React.FC = () => {
 
@@ -13,6 +14,7 @@ const Navigation : React.FC = () => {
                 <img id={"company-logo"} src={CompanyLogo} alt="logo"/>
             </div>
             <div className={"button-container"}>
+                <DemoButton/>
                 <LoginButton/>
             </div>
         </nav>

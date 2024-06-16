@@ -10,16 +10,20 @@
 
 #navigation .logo-container{
     display: flex;
-    justify-content: center;
-    width: 210px;
-    margin-right: 60%;
+    justify-content: start;
+    width: 50%;
+    margin-left: 10%;
 }
 
 #navigation .button-container{
     display: flex;
     justify-content: end;
-    width: 20%;
-    padding: 0 3% 0 2%;
+    width: 50%;
+    margin-right: 10%;
+}
+
+#navigation .button-container button{
+    margin-right: 2%;
 }
 
 #company-logo{
