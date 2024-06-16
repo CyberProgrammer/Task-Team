@@ -2,8 +2,8 @@ import React from "react";
 
 import './analytics-wrapper.css'
 import DoughnutChart from "./charts/doughnut-chart.tsx";
-import {useUser} from "../../../../../contexts/user_context.tsx";
-import {useTasks} from "../../../../../contexts/task_list_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
+import {useTasks} from "../../../../../contexts/tasks.tsx";
 
 interface AnalyticsWrapperProps {
 }

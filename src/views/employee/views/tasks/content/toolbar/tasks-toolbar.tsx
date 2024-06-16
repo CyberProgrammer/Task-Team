@@ -7,7 +7,7 @@ import AddIconLight from '../../../../../../../assets/icons/light_mode/add.svg'
 import FilterIconLight from '../../../../../../../assets/icons/light_mode/filter.svg'
 import SortIconLight from '../../../../../../../assets/icons/light_mode/sort.svg'
 import SearchBar from "../../../../../../components/inputs/search-bar.tsx";
-import {useUser} from "../../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../../contexts/user.tsx";
 interface TasksToolbarProps {
     handleAddTaskMenu: () => void
     handleOpenFilterMenu: () => void

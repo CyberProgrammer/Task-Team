@@ -2,38 +2,42 @@
 import React, {createContext, useContext, ReactNode, useEffect, useState} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { EmployeeInterface } from '../interfaces';
-import {usersList} from "../data/constants.ts"
+import {usersList} from "../data/live/constants.ts"
+import {demoUsers} from "../data/demo/constants.ts"
 
 interface UserContextProps {
     currentUser: EmployeeInterface;
 }
 
 const  userTemplate: EmployeeInterface = {
-    id: "ABC",
-    first_name: "John",
-    last_name: "Doe",
+    id: "auth0|665cf1aa4c131177be6692de",
+    first_name: "Chandler",
+    last_name: "Demo",
     isAdmin: false,
     settings: {
-        isDarkMode: true,
-    },
+        isDarkMode: true
+    }
 };
 
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [currentUser, setCurrentUser] = useState<EmployeeInterface>(userTemplate);
-    const { isAuthenticated, user,  } = useAuth0();
+    const { isAuthenticated, isLoading, user,  } = useAuth0();
+    const [dataInitilized, setDataInitialized] = useState<boolean>(false);
 
     useEffect(() => {
-        if (isAuthenticated && user) {
-            // User means nothing right now, modify when I implement backend
-            // @ts-ignore
-            const { name, email} = user;
-            console.log("User:", user);
+        if (!isLoading && !dataInitilized) {
+            if(isAuthenticated){
+                setCurrentUser(usersList.find((User) => User.id === user!.sub)!);
+                setDataInitialized(true);
+            } else{
+                setCurrentUser(demoUsers.find((user) => user.id === userTemplate.id)!);
+                setDataInitialized(true);
+            }
 
-            setCurrentUser(usersList.find((User) => User.id === user.sub)!);
         }
-    }, [isAuthenticated, user]);
+    }, [isAuthenticated, isLoading, user]);
 
     return (
         <UserContext.Provider value={{ currentUser: currentUser }}>

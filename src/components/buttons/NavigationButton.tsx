@@ -1,6 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-import {useUser} from "../../contexts/user_context.tsx";
+import {useUser} from "../../contexts/user.tsx";
 
 interface ControlButtonProps {
     icon: string;

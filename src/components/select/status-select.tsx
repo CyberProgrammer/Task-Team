@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import StatusOption from "./status-option.tsx";
-import {useUser} from "../../contexts/user_context.tsx";
+import {useUser} from "../../contexts/user.tsx";
 
 interface StatusSelectProps{
     taskStatus: string

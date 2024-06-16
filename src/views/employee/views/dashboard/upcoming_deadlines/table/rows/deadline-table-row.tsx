@@ -2,7 +2,7 @@ import React from "react";
 import {EmployeeInterface} from "../../../../../../../interfaces";
 import StatusSelect from "../../../../../../../components/select/status-select.tsx";
 import PrioritySelect from "../../../../../../../components/select/priority-select.tsx";
-import {useUsersList} from "../../../../../../../contexts/users_list_context.tsx";
+import {useUsersList} from "../../../../../../../contexts/users.tsx";
 
 interface DeadlineTableRowProps {
     currentUser: EmployeeInterface

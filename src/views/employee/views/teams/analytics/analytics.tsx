@@ -1,8 +1,8 @@
 import React from "react";
 import './analytics.css'
-import {useUser} from "../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
 import AnalyticsCard from "./analytics-card.tsx";
-import {useTeamMembers} from "../../../../../contexts/team-members.tsx";
+import {useTeamMembers} from "../../../../../contexts/team_members.tsx";
 
 const Analytics : React.FC = () => {
     const {currentUser} = useUser();

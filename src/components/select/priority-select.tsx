@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import PriorityOption from "./priority-option.tsx";
-import {useUser} from "../../contexts/user_context.tsx";
+import {useUser} from "../../contexts/user.tsx";
 
 interface PrioritySelectProps {
     taskPriority: string

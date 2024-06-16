@@ -1,6 +1,6 @@
 import React from "react";
-import {useUser} from "../../../../../../contexts/user_context.tsx";
-import {useTasks} from "../../../../../../contexts/task_list_context.tsx";
+import {useUser} from "../../../../../../contexts/user.tsx";
+import {useTasks} from "../../../../../../contexts/tasks.tsx";
 import {TasksInterface} from "../../../../../../interfaces";
 
 interface AddTaskMenuProps {

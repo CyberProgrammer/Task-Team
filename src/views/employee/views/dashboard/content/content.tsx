@@ -6,7 +6,7 @@ import NotificationUnreadIconLight from "../../../../../../assets/icons/light_mo
 import NotificationReadIconLight from "../../../../../../assets/icons/light_mode/notification_read.svg";
 import AnalyticsWrapper from "../analytics/analytics-wrapper.tsx";
 import UpcomingDeadline from "../upcoming_deadlines/upcoming-deadlines.tsx";
-import {useUser} from "../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
 
 interface ContentProps{
 

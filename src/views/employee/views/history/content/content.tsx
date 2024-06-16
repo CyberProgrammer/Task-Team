@@ -1,8 +1,8 @@
 import React from "react";
-import {UserProvider, useUser} from "../../../../../contexts/user_context.tsx";
+import {UserProvider, useUser} from "../../../../../contexts/user.tsx";
 import TasksTable from "../../../../../components/table/tasks-table.tsx";
 import {useArchivedTasks} from "../../../../../contexts/archived_tasks.tsx";
-import {UsersListProvider} from "../../../../../contexts/users_list_context.tsx";
+import {UsersListProvider} from "../../../../../contexts/users.tsx";
 
 interface ContentProps{
 }

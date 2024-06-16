@@ -1,0 +1,47 @@
+[
+  {
+    "id": "auth0|665cf1aa4c131177be6692de",
+    "first_name": "Chandler",
+    "last_name": "Demo",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT237230",
+    "first_name": "Joey",
+    "last_name": "Demo",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT235230",
+    "first_name": "Monica",
+    "last_name": "Demo",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT239530",
+    "first_name": "Rachel",
+    "last_name": "Demo",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  },
+  {
+    "id": "ABGT233230",
+    "first_name": "Phoebe",
+    "last_name": "Demo",
+    "isAdmin": false,
+    "settings": {
+      "isDarkMode": true
+    }
+  }
+]

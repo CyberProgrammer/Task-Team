@@ -1,8 +1,8 @@
 import React from "react";
 import useMenuHandlers from "../functions/handleMenus.tsx"
 
-import {useUser} from "../../../../../contexts/user_context.tsx";
-import {useTasks} from "../../../../../contexts/task_list_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
+import {useTasks} from "../../../../../contexts/tasks.tsx";
 
 import '../tasks-view.css'
 
@@ -11,7 +11,7 @@ import TasksTable from "./table/tasks-table.tsx";
 import AddTaskMenu from "./menus/add-task-menu.tsx";
 import FilterMenu from "./menus/filter-menu.tsx";
 import SortMenu from "./menus/sort-menu.tsx";
-import {UsersListProvider} from "../../../../../contexts/users_list_context.tsx";
+import {UsersListProvider} from "../../../../../contexts/users.tsx";
 
 
 interface ContentProps{

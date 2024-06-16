@@ -1,9 +1,9 @@
 import React from "react";
-import {useUser} from "../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
 import TeamsOverview from "./overview/teams-overview.tsx";
 import TeamDetails from "./team_details/team-details.tsx";
-import {useTeams} from "../../../../../contexts/team.tsx";
-import {useTeamMembers} from "../../../../../contexts/team-members.tsx";
+import {useTeams} from "../../../../../contexts/teams.tsx";
+import {useTeamMembers} from "../../../../../contexts/team_members.tsx";
 const Content : React.FC = ({}) => {
     /* Test data */
     const {teams} = useTeams();

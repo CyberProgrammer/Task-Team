@@ -1,5 +1,5 @@
 import React from 'react'
-import {useUser} from "../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
 
 interface AnalyticsCardProps{
     title: string,

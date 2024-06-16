@@ -1,7 +1,7 @@
 import React from "react";
 import StatusSelect from "../../../components/select/status-select.tsx";
 import PrioritySelect from "../../../components/select/priority-select.tsx";
-import {useUser} from "../../../contexts/user_context.tsx";
+import {useUser} from "../../../contexts/user.tsx";
 
 interface TasksTableRowProps {
     type: string

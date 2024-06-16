@@ -5,10 +5,10 @@ import { ArchivedTasksInterface, TasksInterface } from "../../interfaces";
 import TasksTableHead from "./head/tasks-table-head.tsx";
 import TasksTableRow from "./row/tasks-table-row.tsx";
 
-import { useUser } from "../../contexts/user_context.tsx";
+import { useUser } from "../../contexts/user.tsx";
 import { getFullName } from "../../utils/getFullName.ts";
 import { convertToLocalTime } from "../../utils/dateUtils.ts";
-import { archivedTasksList } from "../../data/constants.ts";
+import { archivedTasksList } from "../../data/live/constants.ts";
 
 interface TasksTableProps {
     type: string;
@@ -20,9 +20,9 @@ const TasksTable: React.FC<TasksTableProps> = ({ type, currentTasks }) => {
 
     const renderTasks = () => (
         <>
-            {(type !== "archived" ? currentTasks : archivedTasksList).map((task, index) => (
+            {(type !== "archived" ? currentTasks : archivedTasksList).map((task) => (
                 <TasksTableRow
-                    key={index}
+                    key={task.id}
                     type={type}
                     title={task.title}
                     assignee={getFullName(task) || "Unassigned"}

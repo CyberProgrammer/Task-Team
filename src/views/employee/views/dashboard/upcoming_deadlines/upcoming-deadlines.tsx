@@ -3,7 +3,7 @@ import React from "react";
 import './upcoming-deadlines.css'
 
 import DeadlineTable from "./table/deadline-table.tsx";
-import {useUser} from "../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../contexts/user.tsx";
 
 interface UpcomingDeadlineProps {
 

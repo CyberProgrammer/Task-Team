@@ -1,6 +1,6 @@
 import React from "react";
 import useFilterHandlers from "../../functions/handleFilterOptions.tsx";
-import {useUser} from "../../../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../../../contexts/user.tsx";
 
 interface FilterMenuProps {
 

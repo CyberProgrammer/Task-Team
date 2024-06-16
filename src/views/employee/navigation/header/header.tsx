@@ -1,7 +1,7 @@
 import React from "react";
 import TeamLogoLight from "../../../../../assets/logos/light_mode/TeamLogo.svg";
 import TeamLogoDark from "../../../../../assets/logos/dark_mode/TeamLogo.svg";
-import {useUser} from "../../../../contexts/user_context.tsx";
+import {useUser} from "../../../../contexts/user.tsx";
 
 interface HeaderProps {
 }

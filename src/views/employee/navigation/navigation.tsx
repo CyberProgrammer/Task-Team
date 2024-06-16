@@ -19,7 +19,7 @@ import HistoryIconDark from "../../../../assets/icons/dark_mode/history.svg"
 import SettingIconLight from "../../../../assets/icons/light_mode/setting.svg"
 import SettingIconDark from "../../../../assets/icons/dark_mode/setting.svg"
 import {useLocation} from "react-router-dom";
-import {useUser} from "../../../contexts/user_context.tsx";
+import {useUser} from "../../../contexts/user.tsx";
 
 
 interface EmployeeNavigationProps {

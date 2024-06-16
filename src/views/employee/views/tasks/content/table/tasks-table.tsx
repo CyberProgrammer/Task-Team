@@ -1,7 +1,7 @@
 import React from "react";
 
-import {useUser} from "../../../../../../contexts/user_context.tsx";
-import {useUsersList} from "../../../../../../contexts/users_list_context.tsx";
+import {useUser} from "../../../../../../contexts/user.tsx";
+import {useUsersList} from "../../../../../../contexts/users.tsx";
 
 import "./tasks-table.css"
 

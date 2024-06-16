@@ -1,8 +1,8 @@
 import React from 'react'
-import {useUser} from "../../../../../../../contexts/user_context.tsx";
-import {useTeamMembers} from "../../../../../../../contexts/team-members.tsx";
-import {useTeams} from "../../../../../../../contexts/team.tsx";
-import {useUsersList} from "../../../../../../../contexts/users_list_context.tsx";
+import {useUser} from "../../../../../../../contexts/user.tsx";
+import {useTeamMembers} from "../../../../../../../contexts/team_members.tsx";
+import {useTeams} from "../../../../../../../contexts/teams.tsx";
+import {useUsersList} from "../../../../../../../contexts/users.tsx";
 
 interface TeamTableProps{
     teamID: number

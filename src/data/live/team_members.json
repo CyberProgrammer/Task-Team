@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "team_id": 1,
+    "user_id": "auth0|665cf1aa4c131177be6692de",
+    "role": "Employee",
+    "completed": 1,
+    "tasks_assigned": 1,
+    "joined_on": "2024-07-11T14:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "team_id": 1,
+    "user_id": "ABGT235230",
+    "role": "Employee",
+    "completed": 1,
+    "tasks_assigned": 1,
+    "joined_on": "2024-07-11T14:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "team_id": 2,
+    "user_id": "ABGT237230",
+    "role": "Employee",
+    "completed": 1,
+    "tasks_assigned": 1,
+    "joined_on": "2024-07-11T14:30:00.000Z"
+  },
+  {
+    "id": 4,
+    "team_id": 2,
+    "user_id": "auth0|665cf1aa4c131177be6692de",
+    "role": "Employee",
+    "completed": 3,
+    "tasks_assigned": 1,
+    "joined_on": "2024-07-11T14:30:00.000Z"
+  }
+]
