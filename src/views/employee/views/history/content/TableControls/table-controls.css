@@ -1,0 +1,22 @@
+.table-controls{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.table-col{
+    display: flex;
+    width: 50%;
+}
+
+.left{
+    display: flex;
+    justify-content: start;
+    margin: 2% 0 0 2%;
+}
+
+.right{
+    display: flex;
+    justify-content: end;
+    margin: 2% 2% 0 0;
+}

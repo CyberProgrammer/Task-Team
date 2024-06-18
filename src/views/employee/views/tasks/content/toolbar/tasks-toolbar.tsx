@@ -8,6 +8,8 @@ import FilterIconLight from '../../../../../../../assets/icons/light_mode/filter
 import SortIconLight from '../../../../../../../assets/icons/light_mode/sort.svg'
 import SearchBar from "../../../../../../components/inputs/search-bar.tsx";
 import {useUser} from "../../../../../../contexts/user.tsx";
+import TableControlButton from "../../../../../../components/buttons/TableControlButton.tsx";
+
 interface TasksToolbarProps {
     handleAddTaskMenu: () => void
     handleOpenFilterMenu: () => void
@@ -28,24 +30,12 @@ const TasksToolbar : React.FC<TasksToolbarProps> = (
         <div id={"tasks-toolbar"} className={isDarkMode ? "tasks-toolbar-dark" : "tasks-toolbar-light"}>
             <div className={"toolbar-container"}>
                 <div className={"toolbar-container-left"}>
-                    <button onClick={handleAddTaskMenu} className={`toolbar-button ${isDarkMode ? "toolbar-button-dark" : "toolbar-button-light"}`}>
-                        <img className={"toolbar-button-icon"} src={isDarkMode ? AddIconDark : AddIconLight}
-                             alt="Add icon"/>
-                        <h4 className={"toolbar-button-text"}>Add Task</h4>
-                    </button>
+                    <TableControlButton clickEvent={handleAddTaskMenu} isDarkMode={isDarkMode} iconDark={AddIconDark} iconLight={AddIconLight} text={"Add Task"} />
                 </div>
                 <div className={"toolbar-container-right"}>
                     <SearchBar className={"tasks-table-search"}/>
-                    <button onClick={handleOpenFilterMenu} className={`toolbar-button ${isDarkMode ? "toolbar-button-dark" : "toolbar-button-light"}`}>
-                        <img className={"toolbar-button-icon"} src={isDarkMode ? FilterIconDark : FilterIconLight}
-                             alt="Add icon"/>
-                        <h4 className={"toolbar-button-text"}>Filter</h4>
-                    </button>
-                    <button onClick={handleSortMenu} className={`toolbar-button ${isDarkMode ? "toolbar-button-dark" : "toolbar-button-light"}`}>
-                        <img className={"toolbar-button-icon"} src={isDarkMode ? SortIconDark : SortIconLight}
-                             alt="Add icon"/>
-                        <h4 className={"toolbar-button-text"}>Sort</h4>
-                    </button>
+                    <TableControlButton clickEvent={handleOpenFilterMenu} isDarkMode={isDarkMode} iconDark={FilterIconDark} iconLight={FilterIconLight} text={"Filter"} />
+                    <TableControlButton clickEvent={handleSortMenu} isDarkMode={isDarkMode} iconDark={SortIconDark} iconLight={SortIconLight} text={"Sort"} />
                 </div>
             </div>
         </div>
