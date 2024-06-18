@@ -28,9 +28,9 @@ const Index : React.FC<IndexProps> = ({}) => {
     }, [isRowVisible, isContainerVisible, isCardsVisible]);
 
     return(
-        <div>
+        <div id={"index-container"}>
             <Navigation />
-            <div id={"index-container"}>
+            <div id={"index-body"}>
                 <Video id={"row-1"} className={"row first-row stick"} videoClassName={"animation"} videoSrc={AnimatedCover} />
                 <div id={"row-2"} className={"row"}>
                     <img className={"choose-us-graphic"} src={ChooseUs} alt={"Choose Us"}/>

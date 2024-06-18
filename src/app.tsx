@@ -18,20 +18,6 @@ const App : React.FC = () => {
         return <div>Error: {error.message}</div>
     }
 
-    /*
-        {isAuthenticated ?
-                        (
-                            <>
-                                <Route path="/home" element={<DashboardView />}/>
-                                <Route path="/tasks" element={<TasksView />}/>
-                                <Route path="/teams" element={<TeamsView />}/>
-                                <Route path="/history" element={<HistoryView />}/>
-                                <Route path="/settings" element={<Settings/>}/>
-                            </>
-                        )
-                        : null
-                    }
-     */
     return(
         <div id={"index"}>
             <div className="content">

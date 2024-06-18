@@ -3,12 +3,14 @@ import Navigation from "../../navigation/navigation.tsx";
 import Content from "./content/content.tsx";
 import {UserProvider} from "../../../../contexts/user.tsx";
 
+import './settings.css';
+
 const Settings : React.FC = () => {
 
     return (
         <div id={"employee-container"}>
-            <Navigation />
             <UserProvider>
+                <Navigation />
                 <Content />
             </UserProvider>
         </div>

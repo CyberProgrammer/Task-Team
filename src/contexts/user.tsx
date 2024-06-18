@@ -7,6 +7,7 @@ import {demoUsers} from "../data/demo/constants.ts"
 
 interface UserContextProps {
     currentUser: EmployeeInterface;
+    setCurrentUser: (user: EmployeeInterface) => void;
 }
 
 const  userTemplate: EmployeeInterface = {
@@ -26,6 +27,9 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const { isAuthenticated, isLoading, user,  } = useAuth0();
     const [dataInitilized, setDataInitialized] = useState<boolean>(false);
 
+    const updateCurrentUser = (updatedUser: EmployeeInterface) => {
+        setCurrentUser({...updatedUser});
+    }
     useEffect(() => {
         if (!isLoading && !dataInitilized) {
             if(isAuthenticated){
@@ -39,13 +43,14 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
     }, [isAuthenticated, isLoading, user]);
 
+
+
     return (
-        <UserContext.Provider value={{ currentUser: currentUser }}>
+        <UserContext.Provider value={{ currentUser: currentUser, setCurrentUser: updateCurrentUser}}>
             {children}
         </UserContext.Provider>
     );
 };
-
 export const useUser = (): UserContextProps => {
     const context = useContext(UserContext);
     if (context === undefined) {
