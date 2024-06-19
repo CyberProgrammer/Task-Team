@@ -1,6 +1,7 @@
 import React from "react";
 import StatusSelect from "../../../components/select/status-select.tsx";
 import PrioritySelect from "../../../components/select/priority-select.tsx";
+
 import {useUser} from "../../../contexts/user.tsx";
 
 interface TasksTableRowProps {
@@ -29,8 +30,11 @@ const TasksTableRow : React.FC<TasksTableRowProps> = (
     return (
         <div
             className={`tasks-table-row ${isDarkMode ? "tasks-table-row-dark" : "tasks-table-row-light"}`}>
+            <div className={"select-col"}>
+                <input type={"checkbox"}/>
+            </div>
             <div className={"col-1"}>
-                <p>{title}</p>
+            <p>{title}</p>
             </div>
             <div className={"col-2"}>
                 <p>{assignee}</p>
@@ -52,7 +56,7 @@ const TasksTableRow : React.FC<TasksTableRowProps> = (
                 (
                     <>
                         <div className={"col-6"}>
-                            {archived_on}
+                            <p>{archived_on}</p>
                         </div>
                     </>
                 )

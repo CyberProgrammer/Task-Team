@@ -4,8 +4,14 @@ interface TasksTableHeadProps {
     type: string;
 }
 
-const TasksTableHead: React.FC<TasksTableHeadProps> = ({ type }) => (
+// <li className="col-7">
+//     <h4>Restore</h4>
+// </li>
+const TasksTableHead: React.FC<TasksTableHeadProps> = ({type}) => (
     <ul>
+        <li className={"select-col"}>
+            <input type={"checkbox"}/>
+        </li>
         <li className="col-1">
             <h4>Task name</h4>
         </li>
@@ -25,9 +31,11 @@ const TasksTableHead: React.FC<TasksTableHeadProps> = ({ type }) => (
                 </li>
             </>
         ) : (
-            <li className="col-6">
-                <h4>Archived On</h4>
-            </li>
+            <>
+                <li className="col-6">
+                    <h4>Archived On</h4>
+                </li>
+            </>
         )}
     </ul>
 );
